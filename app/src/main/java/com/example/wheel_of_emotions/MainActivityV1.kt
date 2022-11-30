@@ -43,6 +43,8 @@ class MainActivityV1 : AppCompatActivity() {
     fun rotateAnim(imageView: ImageView, angle : Float){
         imageView.isEnabled = false
         val rotation = imageView.animate().rotation(angle)
+        // TODO try AccelerateDecelerateInterpolator
+        // https://stackoverflow.com/a/70368936/4054411
         rotation.interpolator = FastOutLinearInInterpolator()
         // disabled delay as it is not natural
         // rotation.startDelay = 0

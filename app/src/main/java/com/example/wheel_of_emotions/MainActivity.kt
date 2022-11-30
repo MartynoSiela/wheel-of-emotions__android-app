@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GestureDetectorCompat
 import kotlin.math.abs
 
+// Found here https://www.youtube.com/watch?v=j1aydFEOEA0
 class MainActivity : AppCompatActivity() {
 
     private lateinit var detector: GestureDetectorCompat
