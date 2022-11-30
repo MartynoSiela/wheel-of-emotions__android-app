@@ -1,93 +1,61 @@
 package com.example.wheel_of_emotions
 
+import android.animation.Animator
 import android.os.Bundle
-import android.view.GestureDetector
-import android.view.MotionEvent
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GestureDetectorCompat
-import kotlin.math.abs
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 
-// Found here https://www.youtube.com/watch?v=j1aydFEOEA0
+// This MainActivity example accompanies OnSwipeTouchListenerV1
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var detector: GestureDetectorCompat
-    private val wheel = findViewById<ImageView>(R.id.imageView1)
-    private val emotions = findViewById<ImageView>(R.id.imageView2)
-
-    private fun rotateImage(imageView: ImageView, angle: Float) {
-        imageView.animate().rotation(angle).start()
-    }
-
-    private fun onSwipeDown(diffY: Float, velocityY: Float) {
-        // TODO
-    }
-
-    private fun onSwipeTop(diffY: Float, velocityY: Float) {
-        // TODO
-    }
-
-    private fun onSwipeLeft(diffX: Float, velocityX: Float) {
-        rotateImage(wheel, diffX * velocityX)
-        rotateImage(emotions, diffX * velocityX)
-    }
-
-    private fun onSwipeRight(diffX: Float, velocityX: Float) {
-        rotateImage(wheel, diffX * velocityX)
-        rotateImage(emotions, diffX * velocityX)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        detector = GestureDetectorCompat(this, GestureListener())
-    }
 
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        return if (detector.onTouchEvent(event)) {
-            true
-        } else {
-            super.onTouchEvent(event)
-        }
-    }
+        val wheel = findViewById<ImageView>(R.id.imageView1) as ImageView
+        val emotions = findViewById<ImageView>(R.id.imageView2) as ImageView
 
-    inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
+        window.decorView.setOnTouchListener(object: OnSwipeTouchListenerV1() {
 
-        private val SWIPE_THRESHOLD = 0
-        private val SWIPE_VELOCITY_THRESHOLD = 0
-
-        override fun onFling(
-            eventDown: MotionEvent?,
-            eventMove: MotionEvent?,
-            velocityX: Float,
-            velocityY: Float
-        ): Boolean {
-            val diffX = eventMove?.x?.minus(eventDown!!.x) ?: 0.0f
-            val diffY = eventMove?.x?.minus(eventDown!!.y) ?: 0.0f
-
-            return if (abs(diffX) > abs(diffY)) {
-                if (abs(diffX) > SWIPE_THRESHOLD && abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
-                    if (diffX > 0) {
-                        this@MainActivity.onSwipeRight(diffX, velocityX)
-                    } else {
-                        this@MainActivity.onSwipeLeft(diffX, velocityX)
-                    }
-                    true
-                } else {
-                    super.onFling(eventDown, eventMove, velocityX, velocityY)
-                }
-            } else {
-                if (abs(diffY) > SWIPE_THRESHOLD && abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
-                    if (diffY > 0) {
-                        this@MainActivity.onSwipeTop(diffY, velocityY)
-                    } else {
-                        this@MainActivity.onSwipeDown(diffY, velocityY)
-                    }
-                    true
-                } else {
-                    super.onFling(eventDown, eventMove, velocityX, velocityY)
-                }
+            override fun onSwipeLeft(diffX: Float) {
+                // Attempt to make it work on slow/short swipes
+                val angle = if (diffX > 50) diffX * 2 else diffX * 10
+                rotateAnim(wheel, angle)
+                rotateAnim(emotions, angle)
             }
-        }
+
+            override fun onSwipeRight(diffX: Float) {
+                // Attempt to make it work on slow/short swipes
+                val angle = if (diffX > 50) diffX * 2 else diffX * 10
+                rotateAnim(wheel, angle)
+                rotateAnim(emotions, angle)
+            }
+        })
+    }
+
+    // Basic rotation action
+    fun rotateImage(imageView: ImageView, angle: Float) {
+        imageView.animate().rotation(angle).start()
+    }
+
+    // Found here: https://stackoverflow.com/a/71615594/4054411
+    fun rotateAnim(imageView: ImageView, angle : Float){
+        imageView.isEnabled = false
+        val rotation = imageView.animate().rotation(angle)
+        // TODO try AccelerateDecelerateInterpolator
+        // https://stackoverflow.com/a/70368936/4054411
+        rotation.interpolator = FastOutLinearInInterpolator()
+        // disabled delay as it is not natural
+        // rotation.startDelay = 0
+        rotation.setListener(object : Animator.AnimatorListener{
+            override fun onAnimationEnd(animation: Animator?) {
+                imageView.isEnabled = true
+            }
+            override fun onAnimationStart(animation: Animator?) {}
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationRepeat(animation: Animator?) {}
+        })
+        rotation.start()
     }
 }
