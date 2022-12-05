@@ -6,9 +6,9 @@ import android.view.View
 import androidx.core.view.drawToBitmap
 import kotlin.math.abs
 
-open class OnTouchListener() : View.OnTouchListener {
+open class OnTouchListener(private val centerX: Int, private val centerY: Int) : View.OnTouchListener {
 
-    private val SWIPE_THRESHOLD = 2f
+    private val swipeThreshold = 2f
     private var initialX = 0f
     private var initialY = 0f
     private var previousX = 0f
@@ -17,7 +17,8 @@ open class OnTouchListener() : View.OnTouchListener {
     private var currentY = 0f
     private var diffX = 0f
     private var diffY = 0f
-    private var swipeH = "0"
+    private var swipeHorizontal = "0"
+    private var swipeVertical = "0"
     private var moved = false
 
     override fun onTouch(v: View, event: MotionEvent): Boolean {
@@ -37,10 +38,10 @@ open class OnTouchListener() : View.OnTouchListener {
                 currentY = event.y
                 diffX = currentX - previousX
                 diffY = currentY - previousY
-                when (swipeH) {
+                when (swipeHorizontal) {
                     "LEFT" -> {
                         if (currentX > previousX) {
-                            swipeH = "RIGHT"
+                            swipeHorizontal = "RIGHT"
                             initialX = previousX
                             diffX = currentX - initialX
                         } else {
@@ -49,7 +50,7 @@ open class OnTouchListener() : View.OnTouchListener {
                     }
                     "RIGHT" -> {
                         if (currentX < previousX) {
-                            swipeH = "LEFT"
+                            swipeHorizontal = "LEFT"
                             initialX = previousX
                             diffX = currentX - initialX
                         } else {
@@ -58,11 +59,42 @@ open class OnTouchListener() : View.OnTouchListener {
                     }
                     else -> {
                         if (currentX < initialX) {
-                            swipeH = "LEFT"
+                            swipeHorizontal = "LEFT"
                             diffX = currentX - initialX
                         } else if (currentX > initialX) {
-                            swipeH = "RIGHT"
+                            swipeHorizontal = "RIGHT"
                             diffX = currentX - initialX
+                        } else {
+                            //
+                        }
+                    }
+                }
+                when (swipeVertical) {
+                    "UP" -> {
+                        if (currentY > previousY) {
+                            swipeVertical = "DOWN"
+                            initialY = previousY
+                            diffY = currentY - initialY
+                        } else {
+                            //
+                        }
+                    }
+                    "DOWN" -> {
+                        if (currentY < previousY) {
+                            swipeVertical = "UP"
+                            initialY = previousY
+                            diffY = currentY - initialY
+                        } else {
+                            //
+                        }
+                    }
+                    else -> {
+                        if (currentY < initialY) {
+                            swipeVertical = "UP"
+                            diffY = currentY - initialY
+                        } else if (currentY > initialY) {
+                            swipeVertical = "DOWN"
+                            diffY = currentY - initialY
                         } else {
                             //
                         }
@@ -73,19 +105,39 @@ open class OnTouchListener() : View.OnTouchListener {
                 previousY = currentY
 
                 if (abs(diffX) > abs(diffY)) {
-                    if (abs(diffX) > SWIPE_THRESHOLD) {
-                        if (diffX > 0) {
-                            onSwipeRight(diffX)
-                        } else {
-                            onSwipeLeft(diffX)
+                    if (currentY > centerY) {
+                        if (abs(diffX) > swipeThreshold) {
+                            if (diffX > 0) {
+                                onSwipe(-diffX)
+                            } else {
+                                onSwipe(-diffX)
+                            }
+                        }
+                    } else {
+                        if (abs(diffX) > swipeThreshold) {
+                            if (diffX > 0) {
+                                onSwipe(diffX)
+                            } else {
+                                onSwipe(diffX)
+                            }
                         }
                     }
                 } else {
-                    if (abs(diffY) > SWIPE_THRESHOLD) {
-                        if (diffY > 0) {
-                            onSwipeDown(diffY)
-                        } else {
-                            onSwipeUp(diffY)
+                    if (currentX > centerX) {
+                        if (abs(diffY) > swipeThreshold) {
+                            if (diffY > 0) {
+                                onSwipe(diffY)
+                            } else {
+                                onSwipe(diffY)
+                            }
+                        }
+                    } else {
+                        if (abs(diffY) > swipeThreshold) {
+                            if (diffY > 0) {
+                                onSwipe(-diffY)
+                            } else {
+                                onSwipe(-diffY)
+                            }
                         }
                     }
                 }
@@ -98,7 +150,8 @@ open class OnTouchListener() : View.OnTouchListener {
                     getPixelColorName(Integer.decode(colorSectionSelectedHex))
                 }
                 onSwipeFinished(diffX)
-                swipeH = "0"
+                swipeHorizontal = "0"
+                swipeVertical = "0"
                 initialX = 0f
                 initialY = 0f
                 previousX = 0f
@@ -123,17 +176,5 @@ open class OnTouchListener() : View.OnTouchListener {
 
     }
 
-    open fun onSwipeUp(diffY: Float) {
-
-    }
-
-    open fun onSwipeDown(diffY: Float) {
-
-    }
-
-    open fun onSwipeLeft(diffX: Float) {
-
-    }
-
-    open fun onSwipeRight(diffX: Float) {}
+    open fun onSwipe(angle: Float) {}
 }

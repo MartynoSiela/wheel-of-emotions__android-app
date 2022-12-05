@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.ViewTreeObserver
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -33,43 +34,38 @@ class MainActivity : AppCompatActivity() {
         val imageViewWheel = findViewById<ImageView>(R.id.imageViewWheel)
         val imageViewEmotions = findViewById<ImageView>(R.id.imageViewEmotions)
         val buttonAddEmotions = findViewById<Button>(R.id.button_add_emotion)
+        val buttonShowEmotions = findViewById<Button>(R.id.button_show_emotions)
         buttonAddEmotions.isEnabled = false
 
-        val buttonShowEmotions = findViewById<Button>(R.id.button_show_emotions)
-
-        window.decorView.setOnTouchListener(object: OnTouchListener() {
-
-            override fun getPixelColorName(pixel: Int) {
-                val (colorName, colorValue) = if (pixel == colorSelectedInt) {
-                    Pair(mapColors[colorValuePreviousRgbInt], colorValuePreviousRgbInt)
-                } else {
-                    Pair(mapColors[pixel], pixel)
-                }
-                if (colorName != null) {
-                    changeSectionColor(imageViewWheel, colorName, colorValue)
-                    if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
-                        buttonAddEmotions.isEnabled = false
-                    } else if (!buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt != -1) {
-                        buttonAddEmotions.isEnabled = true
+        getWheelCenterCoordinates(imageViewEmotions) { centerX, centerY ->
+            window.decorView.setOnTouchListener(object: OnTouchListener(centerX, centerY) {
+                override fun getPixelColorName(pixel: Int) {
+                    val (colorName, colorValue) = if (pixel == colorSelectedInt) {
+                        Pair(mapColors[colorValuePreviousRgbInt], colorValuePreviousRgbInt)
+                    } else {
+                        Pair(mapColors[pixel], pixel)
+                    }
+                    if (colorName != null) {
+                        changeSectionColor(imageViewWheel, colorName, colorValue)
+                        if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
+                            buttonAddEmotions.isEnabled = false
+                        } else if (!buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt != -1) {
+                            buttonAddEmotions.isEnabled = true
+                        }
                     }
                 }
-            }
 
-            override fun onSwipeRight(diffX: Float) {
-                rotateImageWithoutAnimation(imageViewWheel, diffX)
-                rotateImageWithoutAnimation(imageViewEmotions, diffX)
-            }
+                override fun onSwipe(angle: Float) {
+                    rotateImageWithoutAnimation(imageViewWheel, angle)
+                    rotateImageWithoutAnimation(imageViewEmotions, angle)
+                }
 
-            override fun onSwipeLeft(diffX: Float) {
-                rotateImageWithoutAnimation(imageViewWheel, diffX)
-                rotateImageWithoutAnimation(imageViewEmotions, diffX)
-            }
-
-            override fun onSwipeFinished(diffX: Float) {
-                rotateImageWithAnimation(imageViewWheel, diffX)
-                rotateImageWithAnimation(imageViewEmotions, diffX)
-            }
-        })
+                override fun onSwipeFinished(diffX: Float) {
+                    rotateImageWithAnimation(imageViewWheel, diffX)
+                    rotateImageWithAnimation(imageViewEmotions, diffX)
+                }
+            })
+        }
 
         buttonAddEmotions.setOnClickListener{
             val db = DBHelper(this, null)
@@ -86,6 +82,23 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, EmotionsTableActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun getWheelCenterCoordinates(imageView: ImageView, callback: (Int, Int) -> Unit) {
+
+        val viewTreeObserver = imageView.viewTreeObserver
+        viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                imageView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                val height = imageView.measuredHeight
+                val width = imageView.measuredWidth
+                val top = imageView.top
+                val left = imageView.left
+                val centerY = top + height / 2
+                val centerX = left + width / 2
+                callback(centerX, centerY)
+            }
+        })
     }
 
     private fun changeSectionColor(imageView: ImageView, colorNameCurrent: String, colorValueCurrent: Int) {
