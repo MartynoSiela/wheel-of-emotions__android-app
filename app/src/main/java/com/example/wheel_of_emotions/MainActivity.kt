@@ -3,7 +3,9 @@ package com.example.wheel_of_emotions
 import android.animation.Animator
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 import com.devs.vectorchildfinder.VectorChildFinder
@@ -28,6 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         val wheel = findViewById<ImageView>(R.id.imageViewWheel)
         val emotions = findViewById<ImageView>(R.id.imageViewEmotions)
+        val button_add_emotion = findViewById<Button>(R.id.button_add_emotion)
+        button_add_emotion.isEnabled = false
 
         window.decorView.setOnTouchListener(object: OnTouchListener() {
 
@@ -39,6 +43,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 if (colorName != null) {
                     changeSectionColor(wheel, colorName, colorValue)
+                    if (button_add_emotion.isEnabled && colorValuePreviousNegativeInt == -1) {
+                        button_add_emotion.isEnabled = false
+                    } else if (!button_add_emotion.isEnabled && colorValuePreviousNegativeInt != -1) {
+                        button_add_emotion.isEnabled = true
+                    }
                 }
             }
 
@@ -57,6 +66,16 @@ class MainActivity : AppCompatActivity() {
                 rotateImageWithAnimation(emotions, diffX)
             }
         })
+
+        button_add_emotion.setOnClickListener{
+            val db = DBHelper(this, null)
+            val emotion = colorNamePrevious
+
+            db.addEmotion(emotion, (System.currentTimeMillis() / 1000).toInt())
+            Toast.makeText(this, "Emotion added", Toast.LENGTH_SHORT).show()
+            changeSectionColor(wheel, colorNamePrevious, colorValuePreviousRgbInt)
+            button_add_emotion.isEnabled = false
+        }
     }
 
     private fun changeSectionColor(imageView: ImageView, colorNameCurrent: String, colorValueCurrent: Int) {
