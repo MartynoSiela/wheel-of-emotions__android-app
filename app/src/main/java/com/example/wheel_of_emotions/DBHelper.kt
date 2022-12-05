@@ -13,7 +13,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val query = ("CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY, " +
                 EMOTION_COl + " TEXT," +
-                DATE_COL + " INTEGER" + ")")
+                DATE_COL + " LONG" + ")")
 
         db.execSQL(query)
     }
@@ -23,7 +23,12 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         onCreate(db)
     }
 
-    fun addEmotion(emotion : String, date : Int ){
+    fun clearTable(table : String) {
+        val db = this.writableDatabase
+        db.execSQL("DELETE FROM $table")
+    }
+
+    fun addEmotion(emotion : String, date : Long ){
 
         val values = ContentValues()
         values.put(EMOTION_COl, emotion)
@@ -38,13 +43,12 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     fun getEmotions(): Cursor? {
         val db = this.readableDatabase
         return db.rawQuery("SELECT * FROM $TABLE_NAME", null)
-
     }
 
     companion object{
         private const val DATABASE_NAME = "database_emotions_wheel"
         private const val DATABASE_VERSION = 1
-        private const val TABLE_NAME = "table_emotions"
+        const val TABLE_NAME = "table_emotions"
         private const val ID_COL = "id"
         private const val EMOTION_COl = "emotion"
         private const val DATE_COL = "date"

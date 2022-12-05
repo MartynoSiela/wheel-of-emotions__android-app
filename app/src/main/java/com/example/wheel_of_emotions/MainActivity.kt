@@ -1,6 +1,7 @@
 package com.example.wheel_of_emotions
 
 import android.animation.Animator
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_main)
 
         val values = arrayOf("angry", "disgusted", "sad", "happy", "surprised", "bad", "fearful", "aggressive", "frustrated", "distant", "critical", "disapproving", "disappointed_disgusted", "awful", "repelled", "hurt", "depressed", "guilty", "despair", "vulnerable", "lonely", "optimistic", "trusting", "peaceful", "powerful", "accepted", "proud", "interested", "content", "playful", "excited", "amazed", "confused", "startled", "tired", "stressed", "busy", "bored", "scared", "anxious", "insecure", "weak", "rejected", "threatened", "let_down", "humiliated", "bitter", "mad", "provoked", "hostile", "infuriated", "annoyed", "withdrawn", "numb", "sceptical", "dismissive", "judgemental", "embarrassed_disgusted", "appalled", "revolted", "nauseated", "detestable", "horrified", "hesitant", "embarrassed_sad", "disappointed_sad", "inferior_sad", "empty", "remorseful", "ashamed", "powerless", "grief", "fragile", "victimised", "abandoned", "isolated", "inspired", "hopeful", "intimate", "sensitive", "thankful", "loving", "creative", "courageous", "valued", "respected", "confident", "successful", "inquisitive", "curious", "joyful", "free", "cheeky", "aroused", "energetic", "eager", "awe", "astonished", "perplexed", "disillusioned", "dismayed", "shocked", "unfocussed", "sleepy", "out_of_control", "overwhelmed_bad", "rushed", "pressured", "apathetic", "indifferent", "helpless", "frightened", "overwhelmed_fearful", "worried", "inadequate", "inferior_fearful", "worthless", "insignificant", "excluded", "persecuted", "nervous", "exposed", "betrayed", "resentful", "disrespected", "ridiculed", "indignant", "violated", "furious", "jealous")
@@ -28,10 +30,12 @@ class MainActivity : AppCompatActivity() {
             .apply { for (i in keys.indices) this[keys[i]] = values[i] }
         println(mapColors)
 
-        val wheel = findViewById<ImageView>(R.id.imageViewWheel)
-        val emotions = findViewById<ImageView>(R.id.imageViewEmotions)
-        val button_add_emotion = findViewById<Button>(R.id.button_add_emotion)
-        button_add_emotion.isEnabled = false
+        val imageViewWheel = findViewById<ImageView>(R.id.imageViewWheel)
+        val imageViewEmotions = findViewById<ImageView>(R.id.imageViewEmotions)
+        val buttonAddEmotions = findViewById<Button>(R.id.button_add_emotion)
+        buttonAddEmotions.isEnabled = false
+
+        val buttonShowEmotions = findViewById<Button>(R.id.button_show_emotions)
 
         window.decorView.setOnTouchListener(object: OnTouchListener() {
 
@@ -42,39 +46,45 @@ class MainActivity : AppCompatActivity() {
                     Pair(mapColors[pixel], pixel)
                 }
                 if (colorName != null) {
-                    changeSectionColor(wheel, colorName, colorValue)
-                    if (button_add_emotion.isEnabled && colorValuePreviousNegativeInt == -1) {
-                        button_add_emotion.isEnabled = false
-                    } else if (!button_add_emotion.isEnabled && colorValuePreviousNegativeInt != -1) {
-                        button_add_emotion.isEnabled = true
+                    changeSectionColor(imageViewWheel, colorName, colorValue)
+                    if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
+                        buttonAddEmotions.isEnabled = false
+                    } else if (!buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt != -1) {
+                        buttonAddEmotions.isEnabled = true
                     }
                 }
             }
 
             override fun onSwipeRight(diffX: Float) {
-                rotateImageWithoutAnimation(wheel, diffX)
-                rotateImageWithoutAnimation(emotions, diffX)
+                rotateImageWithoutAnimation(imageViewWheel, diffX)
+                rotateImageWithoutAnimation(imageViewEmotions, diffX)
             }
 
             override fun onSwipeLeft(diffX: Float) {
-                rotateImageWithoutAnimation(wheel, diffX)
-                rotateImageWithoutAnimation(emotions, diffX)
+                rotateImageWithoutAnimation(imageViewWheel, diffX)
+                rotateImageWithoutAnimation(imageViewEmotions, diffX)
             }
 
             override fun onSwipeFinished(diffX: Float) {
-                rotateImageWithAnimation(wheel, diffX)
-                rotateImageWithAnimation(emotions, diffX)
+                rotateImageWithAnimation(imageViewWheel, diffX)
+                rotateImageWithAnimation(imageViewEmotions, diffX)
             }
         })
 
-        button_add_emotion.setOnClickListener{
+        buttonAddEmotions.setOnClickListener{
             val db = DBHelper(this, null)
             val emotion = colorNamePrevious
 
-            db.addEmotion(emotion, (System.currentTimeMillis() / 1000).toInt())
+            db.addEmotion(emotion, System.currentTimeMillis())
             Toast.makeText(this, "Emotion added", Toast.LENGTH_SHORT).show()
-            changeSectionColor(wheel, colorNamePrevious, colorValuePreviousRgbInt)
-            button_add_emotion.isEnabled = false
+
+            changeSectionColor(imageViewWheel, colorNamePrevious, colorValuePreviousRgbInt)
+            buttonAddEmotions.isEnabled = false
+        }
+
+        buttonShowEmotions.setOnClickListener{
+            val intent = Intent(this, EmotionsTableActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -107,7 +117,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Basic rotation action
     private fun rotateImageWithoutAnimation(imageView: ImageView, angle: Float) {
         imageView.rotation = imageView.rotation + angle * 90 / 1080
     }
