@@ -26,6 +26,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     fun clearTable(table : String) {
         val db = this.writableDatabase
         db.execSQL("DELETE FROM $table")
+        // TODO this might be needed in the future...
+        // db.execSQL("UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = '$TABLE_NAME'");
     }
 
     fun addEmotion(emotion : String, date : Long ){
