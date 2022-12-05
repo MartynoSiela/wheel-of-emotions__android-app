@@ -44,6 +44,7 @@ class EmotionsTableActivity : AppCompatActivity() {
             data?.moveToFirst()
             do {
                 val tableRow: View = LayoutInflater.from(this).inflate(R.layout.table_row, null, false)
+                tableRow.findViewById<TextView>(R.id.row_id).text = data?.getString(0)
                 tableRow.findViewById<TextView>(R.id.row_emotion).text = data?.getString(1)
                 tableRow.findViewById<TextView>(R.id.row_date).text = data?.getString(2)?.let { formatDate(it) }
                 tableLayout.addView(tableRow)

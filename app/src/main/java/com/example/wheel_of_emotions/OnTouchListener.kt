@@ -8,7 +8,7 @@ import kotlin.math.abs
 
 open class OnTouchListener() : View.OnTouchListener {
 
-    private val SWIPE_THRESHOLD = 0f
+    private val SWIPE_THRESHOLD = 2f
     private var initialX = 0f
     private var initialY = 0f
     private var previousX = 0f

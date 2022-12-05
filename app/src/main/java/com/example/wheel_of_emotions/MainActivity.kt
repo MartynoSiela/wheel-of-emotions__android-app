@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun rotateImageWithAnimation(imageView: ImageView, angle: Float) {
         imageView.isEnabled = false
-        val rotation = imageView.animate().rotation(imageView.rotation + angle)
+        val rotation = imageView.animate().rotation(imageView.rotation + angle / 2)
         // rotation.interpolator = AccelerateDecelerateInterpolator()
         rotation.interpolator = FastOutLinearInInterpolator()
         rotation.setListener(object : Animator.AnimatorListener{
