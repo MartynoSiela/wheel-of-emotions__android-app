@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/background">
+    android:background="@color/color_background">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -16,10 +16,10 @@
         />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/imageViewWheel"
         android:layout_width="1000dp"
         android:layout_height="1000dp"
-        android:contentDescription="wheel of emotions"
+        android:contentDescription="wheel"
         app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewEmotions"
         android:layout_width="1000dp"
         android:layout_height="1000dp"
         android:contentDescription="emotions"

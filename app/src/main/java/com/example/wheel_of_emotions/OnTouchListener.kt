@@ -1,14 +1,12 @@
 package com.example.wheel_of_emotions
 
-import android.util.Log
+import android.graphics.Color
 import android.view.MotionEvent
 import android.view.View
+import androidx.core.view.drawToBitmap
 import kotlin.math.abs
 
-// Found here: https://stackoverflow.com/a/19067893/4054411
-// This code allows to 'reset' the swipe direction when the finger is not lifted during the swipe
-// This is still glitchy as are the other implementations I've tried so far
-open class OnSwipeTouchListenerV1() : View.OnTouchListener {
+open class OnTouchListener() : View.OnTouchListener {
 
     private val SWIPE_THRESHOLD = 0f
     private var initialX = 0f
@@ -20,29 +18,25 @@ open class OnSwipeTouchListenerV1() : View.OnTouchListener {
     private var diffX = 0f
     private var diffY = 0f
     private var swipeH = "0"
+    private var moved = false
 
     override fun onTouch(v: View, event: MotionEvent): Boolean {
 
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                Log.i("EVENT", "--------------------- START -------------------------")
-                Log.i("EVENT", "${event.action} INITIAL|$initialX PREVIOUS|$previousX CURRENT|$currentX DIFF|$diffX")
+        val bitmap = v.drawToBitmap()
 
+        return when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                moved = false
                 initialX = event.x
                 initialY = event.y
-                return true
+                true
             }
             MotionEvent.ACTION_MOVE -> {
+                moved = true
                 currentX = event.x
                 currentY = event.y
-                // These where original diff calculations
-                // The issue with this is that diffs get bigger when swiping further
-                // It is an issue because I'm trying to use the diff as an angle to rotate by
-                // diffX = currentX - initialX; // ORIGINAL
-                // diffY = currentY - initialY; // ORIGINAL
-                diffX = currentX - previousX // TRY 1 (SHIT)
-                diffY = currentY - previousY // TRY 1 (SHIT)
-
+                diffX = currentX - previousX
+                diffY = currentY - previousY
                 when (swipeH) {
                     "LEFT" -> {
                         if (currentX > previousX) {
@@ -65,8 +59,10 @@ open class OnSwipeTouchListenerV1() : View.OnTouchListener {
                     else -> {
                         if (currentX < initialX) {
                             swipeH = "LEFT"
+                            diffX = currentX - initialX
                         } else if (currentX > initialX) {
                             swipeH = "RIGHT"
+                            diffX = currentX - initialX
                         } else {
                             //
                         }
@@ -79,47 +75,65 @@ open class OnSwipeTouchListenerV1() : View.OnTouchListener {
                 if (abs(diffX) > abs(diffY)) {
                     if (abs(diffX) > SWIPE_THRESHOLD) {
                         if (diffX > 0) {
-                            Log.i("EVENT", "${event.action} INITIAL|$initialX PREVIOUS|$previousX CURRENT|$currentX DIFF|$diffX")
                             onSwipeRight(diffX)
                         } else {
-                            Log.i("EVENT", "${event.action} INITIAL|$initialX PREVIOUS|$previousX CURRENT|$currentX DIFF|$diffX")
                             onSwipeLeft(diffX)
                         }
                     }
                 } else {
                     if (abs(diffY) > SWIPE_THRESHOLD) {
                         if (diffY > 0) {
-                            onSwipeBottom(diffY)
+                            onSwipeDown(diffY)
                         } else {
-                            onSwipeTop(diffY)
+                            onSwipeUp(diffY)
                         }
                     }
                 }
-                return true
+                true
             }
             MotionEvent.ACTION_UP -> {
-                Log.i("EVENT", "--------------------- END -------------------------")
+                if (!moved) {
+                    val colorPixel = bitmap.getPixel(initialX.toInt(), initialY.toInt())
+                    val colorSectionSelectedHex = String.format("#%02x%02x%02x", Color.red(colorPixel), Color.green(colorPixel), Color.blue(colorPixel))
+                    getPixelColorName(Integer.decode(colorSectionSelectedHex))
+                }
+                onSwipeFinished(diffX)
                 swipeH = "0"
                 initialX = 0f
                 initialY = 0f
                 previousX = 0f
                 previousY = 0f
+                currentX = 0f
+                currentY = 0f
                 diffX = 0f
                 diffY = 0f
-
-                return true
+                true
             }
             else -> {
-                return false
+                false
             }
         }
     }
 
+    open fun getPixelColorName(pixel: Int) {
+
+    }
+
+    open fun onSwipeFinished(diffX: Float) {
+
+    }
+
+    open fun onSwipeUp(diffY: Float) {
+
+    }
+
+    open fun onSwipeDown(diffY: Float) {
+
+    }
+
+    open fun onSwipeLeft(diffX: Float) {
+
+    }
+
     open fun onSwipeRight(diffX: Float) {}
-
-    open fun onSwipeLeft(diffX: Float) {}
-
-    open fun onSwipeTop(diffY: Float) {}
-
-    open fun onSwipeBottom(diffY: Float) {}
 }

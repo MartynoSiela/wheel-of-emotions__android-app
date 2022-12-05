@@ -5,652 +5,782 @@
     android:viewportWidth="200.0"
     android:width="200dp">
     <path
-        android:fillColor="#F4E878"
+        android:fillColor="#FF6C6C"
+        android:name="angry"
         android:pathData="M100,100 L124.537881,82.740440 A30.000000,30.000000 0 0,1 124.537881,117.259560Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#D4D4D4"
+        android:name="disgusted"
         android:pathData="M100,100 L124.537881,117.259560 A30.000000,30.000000 0 0,1 110.140506,128.234201Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#8BC2FF"
+        android:name="sad"
         android:pathData="M100,100 L110.140506,128.234201 A30.000000,30.000000 0 0,1 83.692973,125.180963Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#898778"
+        android:fillColor="#FFFF5D"
+        android:name="happy"
         android:pathData="M100,100 L83.692973,125.180963 A30.000000,30.000000 0 0,1 72.174926,88.785488Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#D2A9FF"
+        android:name="surprised"
         android:pathData="M100,100 L72.174926,88.785488 A30.000000,30.000000 0 0,1 83.692973,74.819037Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#A9FFA9"
+        android:name="bad"
         android:pathData="M100,100 L83.692973,74.819037 A30.000000,30.000000 0 0,1 101.149082,70.022015Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#6C66EB"
+        android:fillColor="#FFC28B"
+        android:name="fearful"
         android:pathData="M100,100 L101.149082,70.022015 A30.000000,30.000000 0 0,1 124.537881,82.740440Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#FF8585"
+        android:name="aggressive"
         android:pathData="M130.000000,100.000000 L160.000000,100.000000 A60.000000,60.000000 0 0,1 159.296825,109.158957 L129.648413,104.579479 A30.000000,30.000000 0 0,0 130.000000,100.000000Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#FF8A8A"
+        android:name="frustrated"
         android:pathData="M129.648413,104.579479 L159.296825,109.158957 A60.000000,60.000000 0 0,1 157.203784,118.103236 L128.601892,109.051618 A30.000000,30.000000 0 0,0 129.648413,104.579479Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#FF8F8F"
+        android:name="distant"
         android:pathData="M128.601892,109.051618 L157.203784,118.103236 A60.000000,60.000000 0 0,1 153.769933,126.623190 L126.884967,113.311595 A30.000000,30.000000 0 0,0 128.601892,109.051618Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CF9E3E"
+        android:fillColor="#FF9494"
+        android:name="critical"
         android:pathData="M126.884967,113.311595 L153.769933,126.623190 A60.000000,60.000000 0 0,1 149.075762,134.519120 L124.537881,117.259560 A30.000000,30.000000 0 0,0 126.884967,113.311595Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#FA4C2C"
+        android:fillColor="#D7D7D7"
+        android:name="disapproving"
         android:pathData="M124.537881,117.259560 L149.075762,134.519120 A60.000000,60.000000 0 0,1 143.231296,141.605950 L121.615648,120.802975 A30.000000,30.000000 0 0,0 124.537881,117.259560Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#898778"
+        android:fillColor="#D9D9D9"
+        android:name="disappointed_disgusted"
         android:pathData="M121.615648,120.802975 L143.231296,141.605950 A60.000000,60.000000 0 0,1 136.373525,147.717572 L118.186762,123.858786 A30.000000,30.000000 0 0,0 121.615648,120.802975Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F065A0"
+        android:fillColor="#DCDCDC"
+        android:name="awful"
         android:pathData="M118.186762,123.858786 L136.373525,147.717572 A60.000000,60.000000 0 0,1 128.663189,152.710735 L114.331595,126.355368 A30.000000,30.000000 0 0,0 118.186762,123.858786Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#6C66EB"
+        android:fillColor="#DEDEDE"
+        android:name="repelled"
         android:pathData="M114.331595,126.355368 L128.663189,152.710735 A60.000000,60.000000 0 0,1 120.281013,156.468403 L110.140506,128.234201 A30.000000,30.000000 0 0,0 114.331595,126.355368Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F4E878"
+        android:fillColor="#A9D2FF"
+        android:name="hurt"
         android:pathData="M110.140506,128.234201 L120.281013,156.468403 A60.000000,60.000000 0 0,1 111.423467,158.902499 L105.711733,129.451250 A30.000000,30.000000 0 0,0 110.140506,128.234201Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#A4CFFF"
+        android:name="depressed"
         android:pathData="M105.711733,129.451250 L111.423467,158.902499 A60.000000,60.000000 0 0,1 102.298164,159.955971 L101.149082,129.977985 A30.000000,30.000000 0 0,0 105.711733,129.451250Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#9FCDFF"
+        android:name="guilty"
         android:pathData="M101.149082,129.977985 L102.298164,159.955971 A60.000000,60.000000 0 0,1 93.118994,159.604125 L96.559497,129.802063 A30.000000,30.000000 0 0,0 101.149082,129.977985Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#9ACAFF"
+        android:name="despair"
         android:pathData="M96.559497,129.802063 L93.118994,159.604125 A60.000000,60.000000 0 0,1 84.101110,157.855210 L92.050555,128.927605 A30.000000,30.000000 0 0,0 96.559497,129.802063Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#95C7FF"
+        android:name="vulnerable"
         android:pathData="M92.050555,128.927605 L84.101110,157.855210 A60.000000,60.000000 0 0,1 75.455882,154.750217 L87.727941,127.375108 A30.000000,30.000000 0 0,0 92.050555,128.927605Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CF9E3E"
+        android:fillColor="#90C5FF"
+        android:name="lonely"
         android:pathData="M87.727941,127.375108 L75.455882,154.750217 A60.000000,60.000000 0 0,1 67.385947,150.361926 L83.692973,125.180963 A30.000000,30.000000 0 0,0 87.727941,127.375108Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CF9E3E"
+        android:fillColor="#FFFF62"
+        android:name="optimistic"
         android:pathData="M83.692973,125.180963 L67.385947,150.361926 A60.000000,60.000000 0 0,1 60.080458,144.793193 L80.040229,122.396597 A30.000000,30.000000 0 0,0 83.692973,125.180963Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFFF67"
+        android:name="trusting"
         android:pathData="M80.040229,122.396597 L60.080458,144.793193 A60.000000,60.000000 0 0,1 53.710649,138.174547 L76.855325,119.087273 A30.000000,30.000000 0 0,0 80.040229,122.396597Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#6C66EB"
+        android:fillColor="#FFFF6C"
+        android:name="peaceful"
         android:pathData="M76.855325,119.087273 L53.710649,138.174547 A60.000000,60.000000 0 0,1 48.425824,130.661121 L74.212912,115.330560 A30.000000,30.000000 0 0,0 76.855325,119.087273Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F065A0"
+        android:fillColor="#FFFF71"
+        android:name="powerful"
         android:pathData="M74.212912,115.330560 L48.425824,130.661121 A60.000000,60.000000 0 0,1 44.349853,122.429024 L72.174926,111.214512 A30.000000,30.000000 0 0,0 74.212912,115.330560Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#FFFF76"
+        android:name="accepted"
         android:pathData="M72.174926,111.214512 L44.349853,122.429024 A60.000000,60.000000 0 0,1 41.578275,113.671211 L70.789137,106.835605 A30.000000,30.000000 0 0,0 72.174926,111.214512Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F065A0"
+        android:fillColor="#FFFF7B"
+        android:name="proud"
         android:pathData="M70.789137,106.835605 L41.578275,113.671211 A60.000000,60.000000 0 0,1 40.176052,104.592955 L70.088026,102.296478 A30.000000,30.000000 0 0,0 70.789137,106.835605Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F4E878"
+        android:fillColor="#FFFF80"
+        android:name="interested"
         android:pathData="M70.088026,102.296478 L40.176052,104.592955 A60.000000,60.000000 0 0,1 40.176052,95.407045 L70.088026,97.703522 A30.000000,30.000000 0 0,0 70.088026,102.296478Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#FFFF86"
+        android:name="content"
         android:pathData="M70.088026,97.703522 L40.176052,95.407045 A60.000000,60.000000 0 0,1 41.578275,86.328789 L70.789137,93.164395 A30.000000,30.000000 0 0,0 70.088026,97.703522Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#6C66EB"
+        android:fillColor="#FFFF8B"
+        android:name="playful"
         android:pathData="M70.789137,93.164395 L41.578275,86.328789 A60.000000,60.000000 0 0,1 44.349853,77.570976 L72.174926,88.785488 A30.000000,30.000000 0 0,0 70.789137,93.164395Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#751B1B"
+        android:fillColor="#DDBEFF"
+        android:name="excited"
         android:pathData="M72.174926,88.785488 L44.349853,77.570976 A60.000000,60.000000 0 0,1 48.425824,69.338879 L74.212912,84.669440 A30.000000,30.000000 0 0,0 72.174926,88.785488Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#DAB9FF"
+        android:name="amazed"
         android:pathData="M74.212912,84.669440 L48.425824,69.338879 A60.000000,60.000000 0 0,1 53.710649,61.825453 L76.855325,80.912727 A30.000000,30.000000 0 0,0 74.212912,84.669440Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#D7B3FF"
+        android:name="confused"
         android:pathData="M76.855325,80.912727 L53.710649,61.825453 A60.000000,60.000000 0 0,1 60.080458,55.206807 L80.040229,77.603403 A30.000000,30.000000 0 0,0 76.855325,80.912727Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#D5AEFF"
+        android:name="startled"
         android:pathData="M80.040229,77.603403 L60.080458,55.206807 A60.000000,60.000000 0 0,1 67.385947,49.638074 L83.692973,74.819037 A30.000000,30.000000 0 0,0 80.040229,77.603403Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#AEFFAE"
+        android:name="tired"
         android:pathData="M83.692973,74.819037 L67.385947,49.638074 A60.000000,60.000000 0 0,1 75.455882,45.249783 L87.727941,72.624892 A30.000000,30.000000 0 0,0 83.692973,74.819037Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#751B1B"
+        android:fillColor="#B3FFB3"
+        android:name="stressed"
         android:pathData="M87.727941,72.624892 L75.455882,45.249783 A60.000000,60.000000 0 0,1 84.101110,42.144790 L92.050555,71.072395 A30.000000,30.000000 0 0,0 87.727941,72.624892Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#B9FFB9"
+        android:name="busy"
         android:pathData="M92.050555,71.072395 L84.101110,42.144790 A60.000000,60.000000 0 0,1 93.118994,40.395875 L96.559497,70.197937 A30.000000,30.000000 0 0,0 92.050555,71.072395Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#898778"
+        android:fillColor="#BEFFBE"
+        android:name="bored"
         android:pathData="M96.559497,70.197937 L93.118994,40.395875 A60.000000,60.000000 0 0,1 102.298164,40.044029 L101.149082,70.022015 A30.000000,30.000000 0 0,0 96.559497,70.197937Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#AB95DF"
+        android:fillColor="#FFD2A9"
+        android:name="scared"
         android:pathData="M101.149082,70.022015 L102.298164,40.044029 A60.000000,60.000000 0 0,1 111.423467,41.097501 L105.711733,70.548750 A30.000000,30.000000 0 0,0 101.149082,70.022015Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#FFCFA4"
+        android:name="anxious"
         android:pathData="M105.711733,70.548750 L111.423467,41.097501 A60.000000,60.000000 0 0,1 120.281013,43.531597 L110.140506,71.765799 A30.000000,30.000000 0 0,0 105.711733,70.548750Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#FFCD9F"
+        android:name="insecure"
         android:pathData="M110.140506,71.765799 L120.281013,43.531597 A60.000000,60.000000 0 0,1 128.663189,47.289265 L114.331595,73.644632 A30.000000,30.000000 0 0,0 110.140506,71.765799Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#478D36"
+        android:fillColor="#FFCA9A"
+        android:name="weak"
         android:pathData="M114.331595,73.644632 L128.663189,47.289265 A60.000000,60.000000 0 0,1 136.373525,52.282428 L118.186762,76.141214 A30.000000,30.000000 0 0,0 114.331595,73.644632Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#751B1B"
+        android:fillColor="#FFC795"
+        android:name="rejected"
         android:pathData="M118.186762,76.141214 L136.373525,52.282428 A60.000000,60.000000 0 0,1 143.231296,58.394050 L121.615648,79.197025 A30.000000,30.000000 0 0,0 118.186762,76.141214Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#6C66EB"
+        android:fillColor="#FFC590"
+        android:name="threatened"
         android:pathData="M121.615648,79.197025 L143.231296,58.394050 A60.000000,60.000000 0 0,1 149.075762,65.480880 L124.537881,82.740440 A30.000000,30.000000 0 0,0 121.615648,79.197025Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FF7171"
+        android:name="let_down"
         android:pathData="M124.537881,82.740440 L149.075762,65.480880 A60.000000,60.000000 0 0,1 153.769933,73.376810 L126.884967,86.688405 A30.000000,30.000000 0 0,0 124.537881,82.740440Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#FF7676"
+        android:name="humiliated"
         android:pathData="M126.884967,86.688405 L153.769933,73.376810 A60.000000,60.000000 0 0,1 157.203784,81.896764 L128.601892,90.948382 A30.000000,30.000000 0 0,0 126.884967,86.688405Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#FF7B7B"
+        android:name="bitter"
         android:pathData="M128.601892,90.948382 L157.203784,81.896764 A60.000000,60.000000 0 0,1 159.296825,90.841043 L129.648413,95.420521 A30.000000,30.000000 0 0,0 128.601892,90.948382Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#FF8080"
+        android:name="mad"
         android:pathData="M129.648413,95.420521 L159.296825,90.841043 A60.000000,60.000000 0 0,1 160.000000,100.000000 L130.000000,100.000000 A30.000000,30.000000 0 0,0 129.648413,95.420521Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#AB95DF"
+        android:fillColor="#FFBDBD"
+        android:name="provoked"
         android:pathData="M160.000000,100.000000 L190.000000,100.000000 A60.000000,60.000000 0 0,1 189.735922,106.889433 L159.823948,104.592955 A30.000000,30.000000 0 0,0 160.000000,100.000000Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CF9E3E"
+        android:fillColor="#FFB8B8"
+        android:name="hostile"
         android:pathData="M159.823948,104.592955 L189.735922,106.889433 A60.000000,60.000000 0 0,1 188.945238,113.738436 L159.296825,109.158957 A30.000000,30.000000 0 0,0 159.823948,104.592955Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#898778"
+        android:fillColor="#FFB3B3"
+        android:name="infuriated"
         android:pathData="M159.296825,109.158957 L188.945238,113.738436 A60.000000,60.000000 0 0,1 187.632588,120.506816 L158.421725,113.671211 A30.000000,30.000000 0 0,0 159.296825,109.158957Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#FFAEAE"
+        android:name="annoyed"
         android:pathData="M158.421725,113.671211 L187.632588,120.506816 A60.000000,60.000000 0 0,1 185.805675,127.154854 L157.203784,118.103236 A30.000000,30.000000 0 0,0 158.421725,113.671211Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#751B1B"
+        android:fillColor="#FFA9A9"
+        android:name="withdrawn"
         android:pathData="M157.203784,118.103236 L185.805675,127.154854 A60.000000,60.000000 0 0,1 183.475221,133.643536 L155.650147,122.429024 A30.000000,30.000000 0 0,0 157.203784,118.103236Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFA4A4"
+        android:name="numb"
         android:pathData="M155.650147,122.429024 L183.475221,133.643536 A60.000000,60.000000 0 0,1 180.654900,139.934785 L153.769933,126.623190 A30.000000,30.000000 0 0,0 155.650147,122.429024Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#FF9F9F"
+        android:name="sceptical"
         android:pathData="M153.769933,126.623190 L180.654900,139.934785 A60.000000,60.000000 0 0,1 177.361265,145.991681 L151.574176,130.661121 A30.000000,30.000000 0 0,0 153.769933,126.623190Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#FF9A9A"
+        android:name="dismissive"
         android:pathData="M151.574176,130.661121 L177.361265,145.991681 A60.000000,60.000000 0 0,1 173.613642,151.778679 L149.075762,134.519120 A30.000000,30.000000 0 0,0 151.574176,130.661121Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#F2F2F2"
+        android:name="judgemental"
         android:pathData="M149.075762,134.519120 L173.613642,151.778679 A60.000000,60.000000 0 0,1 169.434026,157.261820 L146.289351,138.174547 A30.000000,30.000000 0 0,0 149.075762,134.519120Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#AB95DF"
+        android:fillColor="#F0F0F0"
+        android:name="embarrassed_disgusted"
         android:pathData="M146.289351,138.174547 L169.434026,157.261820 A60.000000,60.000000 0 0,1 164.846943,162.408925 L143.231296,141.605950 A30.000000,30.000000 0 0,0 146.289351,138.174547Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#EDEDED"
+        android:name="appalled"
         android:pathData="M143.231296,141.605950 L164.846943,162.408925 A60.000000,60.000000 0 0,1 159.879313,167.189790 L139.919542,144.793193 A30.000000,30.000000 0 0,0 143.231296,141.605950Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F4E878"
+        android:fillColor="#EBEBEB"
+        android:name="revolted"
         android:pathData="M139.919542,144.793193 L159.879313,167.189790 A60.000000,60.000000 0 0,1 154.560287,171.576358 L136.373525,147.717572 A30.000000,30.000000 0 0,0 139.919542,144.793193Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#E8E8E8"
+        android:name="nauseated"
         android:pathData="M136.373525,147.717572 L154.560287,171.576358 A60.000000,60.000000 0 0,1 148.921080,175.542888 L132.614053,150.361926 A30.000000,30.000000 0 0,0 136.373525,147.717572Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#E6E6E6"
+        android:name="detestable"
         android:pathData="M132.614053,150.361926 L148.921080,175.542888 A60.000000,60.000000 0 0,1 142.994784,179.066103 L128.663189,152.710735 A30.000000,30.000000 0 0,0 132.614053,150.361926Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#751B1B"
+        android:fillColor="#E3E3E3"
+        android:name="horrified"
         android:pathData="M128.663189,152.710735 L142.994784,179.066103 A60.000000,60.000000 0 0,1 136.816177,182.125325 L124.544118,154.750217 A30.000000,30.000000 0 0,0 128.663189,152.710735Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#E1E1E1"
+        android:name="hesitant"
         android:pathData="M124.544118,154.750217 L136.816177,182.125325 A60.000000,60.000000 0 0,1 130.421519,184.702604 L120.281013,156.468403 A30.000000,30.000000 0 0,0 124.544118,154.750217Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#AED5FF"
+        android:name="embarrassed_sad"
         android:pathData="M120.281013,156.468403 L130.421519,184.702604 A60.000000,60.000000 0 0,1 123.848335,186.782815 L115.898890,157.855210 A30.000000,30.000000 0 0,0 120.281013,156.468403Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#B3D7FF"
+        android:name="disappointed_sad"
         android:pathData="M115.898890,157.855210 L123.848335,186.782815 A60.000000,60.000000 0 0,1 117.135200,188.353749 L111.423467,158.902499 A30.000000,30.000000 0 0,0 115.898890,157.855210Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F4E878"
+        android:fillColor="#B9DAFF"
+        android:name="inferior_sad"
         android:pathData="M111.423467,158.902499 L117.135200,188.353749 A60.000000,60.000000 0 0,1 110.321508,189.406188 L106.881006,159.604125 A30.000000,30.000000 0 0,0 111.423467,158.902499Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CF9E3E"
+        android:fillColor="#BEDDFF"
+        android:name="empty"
         android:pathData="M106.881006,159.604125 L110.321508,189.406188 A60.000000,60.000000 0 0,1 103.447246,189.933956 L102.298164,159.955971 A30.000000,30.000000 0 0,0 106.881006,159.604125Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#C3E0FF"
+        android:name="remorseful"
         android:pathData="M102.298164,159.955971 L103.447246,189.933956 A60.000000,60.000000 0 0,1 96.552754,189.933956 L97.701836,159.955971 A30.000000,30.000000 0 0,0 102.298164,159.955971Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#C8E2FF"
+        android:name="ashamed"
         android:pathData="M97.701836,159.955971 L96.552754,189.933956 A60.000000,60.000000 0 0,1 89.678492,189.406188 L93.118994,159.604125 A30.000000,30.000000 0 0,0 97.701836,159.955971Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#CDE5FF"
+        android:name="powerless"
         android:pathData="M93.118994,159.604125 L89.678492,189.406188 A60.000000,60.000000 0 0,1 82.864800,188.353749 L88.576533,158.902499 A30.000000,30.000000 0 0,0 93.118994,159.604125Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#D2E8FF"
+        android:name="grief"
         android:pathData="M88.576533,158.902499 L82.864800,188.353749 A60.000000,60.000000 0 0,1 76.151665,186.782815 L84.101110,157.855210 A30.000000,30.000000 0 0,0 88.576533,158.902499Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CF9E3E"
+        android:fillColor="#D7EAFF"
+        android:name="fragile"
         android:pathData="M84.101110,157.855210 L76.151665,186.782815 A60.000000,60.000000 0 0,1 69.578481,184.702604 L79.718987,156.468403 A30.000000,30.000000 0 0,0 84.101110,157.855210Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#DCEDFF"
+        android:name="victimised"
         android:pathData="M79.718987,156.468403 L69.578481,184.702604 A60.000000,60.000000 0 0,1 63.183823,182.125325 L75.455882,154.750217 A30.000000,30.000000 0 0,0 79.718987,156.468403Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#AB95DF"
+        android:fillColor="#E1F0FF"
+        android:name="abandoned"
         android:pathData="M75.455882,154.750217 L63.183823,182.125325 A60.000000,60.000000 0 0,1 57.005216,179.066103 L71.336811,152.710735 A30.000000,30.000000 0 0,0 75.455882,154.750217Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#E6F2FF"
+        android:name="isolated"
         android:pathData="M71.336811,152.710735 L57.005216,179.066103 A60.000000,60.000000 0 0,1 51.078920,175.542888 L67.385947,150.361926 A30.000000,30.000000 0 0,0 71.336811,152.710735Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#FFFFE6"
+        android:name="inspired"
         android:pathData="M67.385947,150.361926 L51.078920,175.542888 A60.000000,60.000000 0 0,1 45.439713,171.576358 L63.626475,147.717572 A30.000000,30.000000 0 0,0 67.385947,150.361926Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#FFFFE1"
+        android:name="hopeful"
         android:pathData="M63.626475,147.717572 L45.439713,171.576358 A60.000000,60.000000 0 0,1 40.120687,167.189790 L60.080458,144.793193 A30.000000,30.000000 0 0,0 63.626475,147.717572Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#FFFFDC"
+        android:name="intimate"
         android:pathData="M60.080458,144.793193 L40.120687,167.189790 A60.000000,60.000000 0 0,1 35.153057,162.408925 L56.768704,141.605950 A30.000000,30.000000 0 0,0 60.080458,144.793193Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#FFFFD7"
+        android:name="sensitive"
         android:pathData="M56.768704,141.605950 L35.153057,162.408925 A60.000000,60.000000 0 0,1 30.565974,157.261820 L53.710649,138.174547 A30.000000,30.000000 0 0,0 56.768704,141.605950Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#478D36"
+        android:fillColor="#FFFFD2"
+        android:name="thankful"
         android:pathData="M53.710649,138.174547 L30.565974,157.261820 A60.000000,60.000000 0 0,1 26.386358,151.778679 L50.924238,134.519120 A30.000000,30.000000 0 0,0 53.710649,138.174547Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#FA4C2C"
+        android:fillColor="#FFFFCD"
+        android:name="loving"
         android:pathData="M50.924238,134.519120 L26.386358,151.778679 A60.000000,60.000000 0 0,1 22.638735,145.991681 L48.425824,130.661121 A30.000000,30.000000 0 0,0 50.924238,134.519120Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#AB95DF"
+        android:fillColor="#FFFFC8"
+        android:name="creative"
         android:pathData="M48.425824,130.661121 L22.638735,145.991681 A60.000000,60.000000 0 0,1 19.345100,139.934785 L46.230067,126.623190 A30.000000,30.000000 0 0,0 48.425824,130.661121Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#FFFFC3"
+        android:name="courageous"
         android:pathData="M46.230067,126.623190 L19.345100,139.934785 A60.000000,60.000000 0 0,1 16.524779,133.643536 L44.349853,122.429024 A30.000000,30.000000 0 0,0 46.230067,126.623190Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#478D36"
+        android:fillColor="#FFFFBE"
+        android:name="valued"
         android:pathData="M44.349853,122.429024 L16.524779,133.643536 A60.000000,60.000000 0 0,1 14.194325,127.154854 L42.796216,118.103236 A30.000000,30.000000 0 0,0 44.349853,122.429024Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFFFB9"
+        android:name="respected"
         android:pathData="M42.796216,118.103236 L14.194325,127.154854 A60.000000,60.000000 0 0,1 12.367412,120.506816 L41.578275,113.671211 A30.000000,30.000000 0 0,0 42.796216,118.103236Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F065A0"
+        android:fillColor="#FFFFB3"
+        android:name="confident"
         android:pathData="M41.578275,113.671211 L12.367412,120.506816 A60.000000,60.000000 0 0,1 11.054762,113.738436 L40.703175,109.158957 A30.000000,30.000000 0 0,0 41.578275,113.671211Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#FFFFAE"
+        android:name="successful"
         android:pathData="M40.703175,109.158957 L11.054762,113.738436 A60.000000,60.000000 0 0,1 10.264078,106.889433 L40.176052,104.592955 A30.000000,30.000000 0 0,0 40.703175,109.158957Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#FFFFA9"
+        android:name="inquisitive"
         android:pathData="M40.176052,104.592955 L10.264078,106.889433 A60.000000,60.000000 0 0,1 10.000000,100.000000 L40.000000,100.000000 A30.000000,30.000000 0 0,0 40.176052,104.592955Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#751B1B"
+        android:fillColor="#FFFFA4"
+        android:name="curious"
         android:pathData="M40.000000,100.000000 L10.000000,100.000000 A60.000000,60.000000 0 0,1 10.264078,93.110567 L40.176052,95.407045 A30.000000,30.000000 0 0,0 40.000000,100.000000Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#FFFF9F"
+        android:name="joyful"
         android:pathData="M40.176052,95.407045 L10.264078,93.110567 A60.000000,60.000000 0 0,1 11.054762,86.261564 L40.703175,90.841043 A30.000000,30.000000 0 0,0 40.176052,95.407045Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F065A0"
+        android:fillColor="#FFFF9A"
+        android:name="free"
         android:pathData="M40.703175,90.841043 L11.054762,86.261564 A60.000000,60.000000 0 0,1 12.367412,79.493184 L41.578275,86.328789 A30.000000,30.000000 0 0,0 40.703175,90.841043Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFFF95"
+        android:name="cheeky"
         android:pathData="M41.578275,86.328789 L12.367412,79.493184 A60.000000,60.000000 0 0,1 14.194325,72.845146 L42.796216,81.896764 A30.000000,30.000000 0 0,0 41.578275,86.328789Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#FFFF90"
+        android:name="aroused"
         android:pathData="M42.796216,81.896764 L14.194325,72.845146 A60.000000,60.000000 0 0,1 16.524779,66.356464 L44.349853,77.570976 A30.000000,30.000000 0 0,0 42.796216,81.896764Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#E0C3FF"
+        android:name="energetic"
         android:pathData="M44.349853,77.570976 L16.524779,66.356464 A60.000000,60.000000 0 0,1 19.345100,60.065215 L46.230067,73.376810 A30.000000,30.000000 0 0,0 44.349853,77.570976Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#E2C8FF"
+        android:name="eager"
         android:pathData="M46.230067,73.376810 L19.345100,60.065215 A60.000000,60.000000 0 0,1 22.638735,54.008319 L48.425824,69.338879 A30.000000,30.000000 0 0,0 46.230067,73.376810Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#E5CCFF"
+        android:name="awe"
         android:pathData="M48.425824,69.338879 L22.638735,54.008319 A60.000000,60.000000 0 0,1 26.386358,48.221321 L50.924238,65.480880 A30.000000,30.000000 0 0,0 48.425824,69.338879Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#898778"
+        android:fillColor="#E8D2FF"
+        android:name="astonished"
         android:pathData="M50.924238,65.480880 L26.386358,48.221321 A60.000000,60.000000 0 0,1 30.565974,42.738180 L53.710649,61.825453 A30.000000,30.000000 0 0,0 50.924238,65.480880Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#6C66EB"
+        android:fillColor="#EAD7FF"
+        android:name="perplexed"
         android:pathData="M53.710649,61.825453 L30.565974,42.738180 A60.000000,60.000000 0 0,1 35.153057,37.591075 L56.768704,58.394050 A30.000000,30.000000 0 0,0 53.710649,61.825453Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#EDDCFF"
+        android:name="disillusioned"
         android:pathData="M56.768704,58.394050 L35.153057,37.591075 A60.000000,60.000000 0 0,1 40.120687,32.810210 L60.080458,55.206807 A30.000000,30.000000 0 0,0 56.768704,58.394050Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#F0E1FF"
+        android:name="dismayed"
         android:pathData="M60.080458,55.206807 L40.120687,32.810210 A60.000000,60.000000 0 0,1 45.439713,28.423642 L63.626475,52.282428 A30.000000,30.000000 0 0,0 60.080458,55.206807Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#898778"
+        android:fillColor="#F2E6FF"
+        android:name="shocked"
         android:pathData="M63.626475,52.282428 L45.439713,28.423642 A60.000000,60.000000 0 0,1 51.078920,24.457112 L67.385947,49.638074 A30.000000,30.000000 0 0,0 63.626475,52.282428Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#6C66EB"
+        android:fillColor="#E6FFE6"
+        android:name="unfocussed"
         android:pathData="M67.385947,49.638074 L51.078920,24.457112 A60.000000,60.000000 0 0,1 57.005216,20.933897 L71.336811,47.289265 A30.000000,30.000000 0 0,0 67.385947,49.638074Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#478D36"
+        android:fillColor="#E1FFE1"
+        android:name="sleepy"
         android:pathData="M71.336811,47.289265 L57.005216,20.933897 A60.000000,60.000000 0 0,1 63.183823,17.874675 L75.455882,45.249783 A30.000000,30.000000 0 0,0 71.336811,47.289265Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#DCFFDC"
+        android:name="out_of_control"
         android:pathData="M75.455882,45.249783 L63.183823,17.874675 A60.000000,60.000000 0 0,1 69.578481,15.297396 L79.718987,43.531597 A30.000000,30.000000 0 0,0 75.455882,45.249783Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CF9E3E"
+        android:fillColor="#D7FFD7"
+        android:name="overwhelmed_bad"
         android:pathData="M79.718987,43.531597 L69.578481,15.297396 A60.000000,60.000000 0 0,1 76.151665,13.217185 L84.101110,42.144790 A30.000000,30.000000 0 0,0 79.718987,43.531597Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#D2FFD2"
+        android:name="rushed"
         android:pathData="M84.101110,42.144790 L76.151665,13.217185 A60.000000,60.000000 0 0,1 82.864800,11.646251 L88.576533,41.097501 A30.000000,30.000000 0 0,0 84.101110,42.144790Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#CDFFCD"
+        android:name="pressured"
         android:pathData="M88.576533,41.097501 L82.864800,11.646251 A60.000000,60.000000 0 0,1 89.678492,10.593812 L93.118994,40.395875 A30.000000,30.000000 0 0,0 88.576533,41.097501Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#C8FFC8"
+        android:name="apathetic"
         android:pathData="M93.118994,40.395875 L89.678492,10.593812 A60.000000,60.000000 0 0,1 96.552754,10.066044 L97.701836,40.044029 A30.000000,30.000000 0 0,0 93.118994,40.395875Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#C3FFC3"
+        android:name="indifferent"
         android:pathData="M97.701836,40.044029 L96.552754,10.066044 A60.000000,60.000000 0 0,1 103.447246,10.066044 L102.298164,40.044029 A30.000000,30.000000 0 0,0 97.701836,40.044029Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#2F0D42"
+        android:fillColor="#FFD5AE"
+        android:name="helpless"
         android:pathData="M102.298164,40.044029 L103.447246,10.066044 A60.000000,60.000000 0 0,1 110.321508,10.593812 L106.881006,40.395875 A30.000000,30.000000 0 0,0 102.298164,40.044029Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#FFD7B3"
+        android:name="frightened"
         android:pathData="M106.881006,40.395875 L110.321508,10.593812 A60.000000,60.000000 0 0,1 117.135200,11.646251 L111.423467,41.097501 A30.000000,30.000000 0 0,0 106.881006,40.395875Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D04C59"
+        android:fillColor="#FFDAB9"
+        android:name="overwhelmed_fearful"
         android:pathData="M111.423467,41.097501 L117.135200,11.646251 A60.000000,60.000000 0 0,1 123.848335,13.217185 L115.898890,42.144790 A30.000000,30.000000 0 0,0 111.423467,41.097501Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#478D36"
+        android:fillColor="#FFDDBE"
+        android:name="worried"
         android:pathData="M115.898890,42.144790 L123.848335,13.217185 A60.000000,60.000000 0 0,1 130.421519,15.297396 L120.281013,43.531597 A30.000000,30.000000 0 0,0 115.898890,42.144790Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#B931E9"
+        android:fillColor="#FFE0C3"
+        android:name="inadequate"
         android:pathData="M120.281013,43.531597 L130.421519,15.297396 A60.000000,60.000000 0 0,1 136.816177,17.874675 L124.544118,45.249783 A30.000000,30.000000 0 0,0 120.281013,43.531597Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFE2C8"
+        android:name="inferior_fearful"
         android:pathData="M124.544118,45.249783 L136.816177,17.874675 A60.000000,60.000000 0 0,1 142.994784,20.933897 L128.663189,47.289265 A30.000000,30.000000 0 0,0 124.544118,45.249783Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#AB95DF"
+        android:fillColor="#FFE5CD"
+        android:name="worthless"
         android:pathData="M128.663189,47.289265 L142.994784,20.933897 A60.000000,60.000000 0 0,1 148.921080,24.457112 L132.614053,49.638074 A30.000000,30.000000 0 0,0 128.663189,47.289265Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFE8D2"
+        android:name="insignificant"
         android:pathData="M132.614053,49.638074 L148.921080,24.457112 A60.000000,60.000000 0 0,1 154.560287,28.423642 L136.373525,52.282428 A30.000000,30.000000 0 0,0 132.614053,49.638074Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#05C6A5"
+        android:fillColor="#FFEAD7"
+        android:name="excluded"
         android:pathData="M136.373525,52.282428 L154.560287,28.423642 A60.000000,60.000000 0 0,1 159.879313,32.810210 L139.919542,55.206807 A30.000000,30.000000 0 0,0 136.373525,52.282428Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#751B1B"
+        android:fillColor="#FFEDDC"
+        android:name="persecuted"
         android:pathData="M139.919542,55.206807 L159.879313,32.810210 A60.000000,60.000000 0 0,1 164.846943,37.591075 L143.231296,58.394050 A30.000000,30.000000 0 0,0 139.919542,55.206807Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#FA4C2C"
+        android:fillColor="#FFF0E1"
+        android:name="nervous"
         android:pathData="M143.231296,58.394050 L164.846943,37.591075 A60.000000,60.000000 0 0,1 169.434026,42.738180 L146.289351,61.825453 A30.000000,30.000000 0 0,0 143.231296,58.394050Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#F4E878"
+        android:fillColor="#FFF2E6"
+        android:name="exposed"
         android:pathData="M146.289351,61.825453 L169.434026,42.738180 A60.000000,60.000000 0 0,1 173.613642,48.221321 L149.075762,65.480880 A30.000000,30.000000 0 0,0 146.289351,61.825453Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFE6E6"
+        android:name="betrayed"
         android:pathData="M149.075762,65.480880 L173.613642,48.221321 A60.000000,60.000000 0 0,1 177.361265,54.008319 L151.574176,69.338879 A30.000000,30.000000 0 0,0 149.075762,65.480880Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#FFE1E1"
+        android:name="resentful"
         android:pathData="M151.574176,69.338879 L177.361265,54.008319 A60.000000,60.000000 0 0,1 180.654900,60.065215 L153.769933,73.376810 A30.000000,30.000000 0 0,0 151.574176,69.338879Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#478D36"
+        android:fillColor="#FFDCDC"
+        android:name="disrespected"
         android:pathData="M153.769933,73.376810 L180.654900,60.065215 A60.000000,60.000000 0 0,1 183.475221,66.356464 L155.650147,77.570976 A30.000000,30.000000 0 0,0 153.769933,73.376810Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#CCFB2B"
+        android:fillColor="#FFD7D7"
+        android:name="ridiculed"
         android:pathData="M155.650147,77.570976 L183.475221,66.356464 A60.000000,60.000000 0 0,1 185.805675,72.845146 L157.203784,81.896764 A30.000000,30.000000 0 0,0 155.650147,77.570976Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#D60950"
+        android:fillColor="#FFD2D2"
+        android:name="indignant"
         android:pathData="M157.203784,81.896764 L185.805675,72.845146 A60.000000,60.000000 0 0,1 187.632588,79.493184 L158.421725,86.328789 A30.000000,30.000000 0 0,0 157.203784,81.896764Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#056C81"
+        android:fillColor="#FFCDCD"
+        android:name="violated"
         android:pathData="M158.421725,86.328789 L187.632588,79.493184 A60.000000,60.000000 0 0,1 188.945238,86.261564 L159.296825,90.841043 A30.000000,30.000000 0 0,0 158.421725,86.328789Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#FFC7C7"
+        android:name="furious"
         android:pathData="M159.296825,90.841043 L188.945238,86.261564 A60.000000,60.000000 0 0,1 189.735922,93.110567 L159.823948,95.407045 A30.000000,30.000000 0 0,0 159.296825,90.841043Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
     <path
-        android:fillColor="#52FF43"
+        android:fillColor="#FFC2C2"
+        android:name="jealous"
         android:pathData="M159.823948,95.407045 L189.735922,93.110567 A60.000000,60.000000 0 0,1 190.000000,100.000000 L160.000000,100.000000 A30.000000,30.000000 0 0,0 159.823948,95.407045Z"
         android:strokeColor="@color/black"
         android:strokeWidth="0.2" />
