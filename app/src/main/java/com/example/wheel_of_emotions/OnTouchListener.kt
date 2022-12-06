@@ -30,6 +30,8 @@ open class OnTouchListener(private val centerX: Int, private val centerY: Int) :
                 moved = false
                 initialX = event.x
                 initialY = event.y
+                previousX = event.x
+                previousY = event.y
                 true
             }
             MotionEvent.ACTION_MOVE -> {
@@ -38,128 +40,68 @@ open class OnTouchListener(private val centerX: Int, private val centerY: Int) :
                 currentY = event.y
                 diffX = currentX - previousX
                 diffY = currentY - previousY
-                when (swipeHorizontal) {
-                    "LEFT" -> {
-                        if (currentX > previousX) {
-                            swipeHorizontal = "RIGHT"
-                            initialX = previousX
-                            diffX = currentX - initialX
-                        } else {
-                            //
-                        }
+
+                // Set initial direction
+                when {
+                    currentX < initialX -> {
+                        swipeHorizontal = "LEFT"
                     }
-                    "RIGHT" -> {
-                        if (currentX < previousX) {
-                            swipeHorizontal = "LEFT"
-                            initialX = previousX
-                            diffX = currentX - initialX
-                        } else {
-                            //
-                        }
+                    currentX > initialX -> {
+                        swipeHorizontal = "RIGHT"
                     }
-                    else -> {
-                        if (currentX < initialX) {
-                            swipeHorizontal = "LEFT"
-                            diffX = currentX - initialX
-                        } else if (currentX > initialX) {
-                            swipeHorizontal = "RIGHT"
-                            diffX = currentX - initialX
-                        } else {
-                            //
-                        }
+                    currentY < initialY -> {
+                        swipeVertical = "UP"
+                    }
+                    currentY > initialY -> {
+                        swipeVertical = "DOWN"
                     }
                 }
-                when (swipeVertical) {
-                    "UP" -> {
-                        if (currentY > previousY) {
-                            swipeVertical = "DOWN"
-                            initialY = previousY
-                            diffY = currentY - initialY
-                        } else {
-                            //
-                        }
+
+                // Reverse direction
+                when {
+                    swipeHorizontal == "LEFT" && currentX > previousX -> {
+                        swipeHorizontal = "RIGHT"
+                        initialX = previousX
                     }
-                    "DOWN" -> {
-                        if (currentY < previousY) {
-                            swipeVertical = "UP"
-                            initialY = previousY
-                            diffY = currentY - initialY
-                        } else {
-                            //
-                        }
+                    swipeHorizontal == "RIGHT" && currentX < previousX -> {
+                        swipeHorizontal = "LEFT"
+                        initialX = previousX
                     }
-                    else -> {
-                        if (currentY < initialY) {
-                            swipeVertical = "UP"
-                            diffY = currentY - initialY
-                        } else if (currentY > initialY) {
-                            swipeVertical = "DOWN"
-                            diffY = currentY - initialY
-                        } else {
-                            //
-                        }
+                    swipeVertical == "UP" && currentY > previousY -> {
+                        swipeVertical = "DOWN"
+                        initialY = previousY
+                    }
+                    swipeVertical == "DOWN" && currentY < previousY -> {
+                        swipeVertical = "UP"
+                        initialY = previousY
                     }
                 }
 
                 previousX = currentX
                 previousY = currentY
 
-                if (abs(diffX) > abs(diffY)) {
-                    if (currentY > centerY) {
-                        if (abs(diffX) > swipeThreshold) {
-                            if (diffX > 0) {
-                                onSwipe(-diffX)
-                            } else {
-                                onSwipe(-diffX)
-                            }
-                        }
-                    } else {
-                        if (abs(diffX) > swipeThreshold) {
-                            if (diffX > 0) {
-                                onSwipe(diffX)
-                            } else {
-                                onSwipe(diffX)
-                            }
-                        }
-                    }
-                } else {
-                    if (currentX > centerX) {
-                        if (abs(diffY) > swipeThreshold) {
-                            if (diffY > 0) {
-                                onSwipe(diffY)
-                            } else {
-                                onSwipe(diffY)
-                            }
-                        }
-                    } else {
-                        if (abs(diffY) > swipeThreshold) {
-                            if (diffY > 0) {
-                                onSwipe(-diffY)
-                            } else {
-                                onSwipe(-diffY)
-                            }
-                        }
-                    }
+                // Do rotation based on vertical or horizontal swipe
+                if (abs(diffX) > abs(diffY) && abs(diffX) > swipeThreshold) {
+                    if (currentY > centerY) onSwipe(-diffX) else onSwipe(diffX)
+                } else
+                if (abs(diffX) < abs(diffY) && abs(diffY) > swipeThreshold) {
+                    if (currentX > centerX) onSwipe(diffY) else onSwipe(-diffY)
                 }
+
                 true
             }
             MotionEvent.ACTION_UP -> {
+
+                // If the wheel was not moved then there was a click action to selected a section
                 if (!moved) {
                     val colorPixel = bitmap.getPixel(initialX.toInt(), initialY.toInt())
                     val colorSectionSelectedHex = String.format("#%02x%02x%02x", Color.red(colorPixel), Color.green(colorPixel), Color.blue(colorPixel))
                     getPixelColorName(Integer.decode(colorSectionSelectedHex))
                 }
-                onSwipeFinished(diffX)
-                swipeHorizontal = "0"
-                swipeVertical = "0"
-                initialX = 0f
-                initialY = 0f
-                previousX = 0f
-                previousY = 0f
-                currentX = 0f
-                currentY = 0f
-                diffX = 0f
-                diffY = 0f
+
+                // Disabled animated rotation on finished swipe
+                // onSwipeFinished(diffX)
+
                 true
             }
             else -> {
