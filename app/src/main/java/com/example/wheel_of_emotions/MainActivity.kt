@@ -1,16 +1,19 @@
 package com.example.wheel_of_emotions
 
 import android.animation.Animator
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.ViewTreeObserver
+import android.view.MotionEvent
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.drawToBitmap
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 import com.devs.vectorchildfinder.VectorChildFinder
+import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private val colorSelectedRgb = Color.rgb(255,255,255)
     private val colorSelectedInt = 16777215
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -37,34 +41,39 @@ class MainActivity : AppCompatActivity() {
         val buttonShowEmotions = findViewById<Button>(R.id.button_show_emotions)
         buttonAddEmotions.isEnabled = false
 
-        getWheelCenterCoordinates(imageViewEmotions) { centerX, centerY ->
-            window.decorView.setOnTouchListener(object: OnTouchListener(centerX, centerY) {
-                override fun getPixelColorName(pixel: Int) {
-                    val (colorName, colorValue) = if (pixel == colorSelectedInt) {
-                        Pair(mapColors[colorValuePreviousRgbInt], colorValuePreviousRgbInt)
-                    } else {
-                        Pair(mapColors[pixel], pixel)
-                    }
-                    if (colorName != null) {
-                        changeSectionColor(imageViewWheel, colorName, colorValue)
-                        if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
-                            buttonAddEmotions.isEnabled = false
-                        } else if (!buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt != -1) {
-                            buttonAddEmotions.isEnabled = true
-                        }
-                    }
-                }
+        val swipeThreshold = 2f
+        var initialX = 0f
+        var initialY = 0f
+        var previousX = 0f
+        var previousY = 0f
+        var currentX: Float
+        var currentY: Float
+        var diffX: Float
+        var diffY: Float
+        var swipeHorizontal = "0"
+        var swipeVertical = "0"
+        var moved = false
 
-                override fun onSwipe(angle: Float) {
-                    rotateImageWithoutAnimation(imageViewWheel, angle)
-                    rotateImageWithoutAnimation(imageViewEmotions, angle)
-                }
+        fun onSwipe(angle: Float) {
+            rotateImageWithoutAnimation(imageViewWheel, angle)
+            rotateImageWithoutAnimation(imageViewEmotions, angle)
+        }
 
-                override fun onSwipeFinished(diffX: Float) {
-                    rotateImageWithAnimation(imageViewWheel, diffX)
-                    rotateImageWithAnimation(imageViewEmotions, diffX)
+        fun getPixelColorName(pixel: Int) {
+            val (colorName, colorValue) = if (pixel == colorSelectedInt) {
+                Pair(mapColors[colorValuePreviousRgbInt], colorValuePreviousRgbInt)
+            } else {
+                Pair(mapColors[pixel], pixel)
+            }
+
+            if (colorName != null) {
+                changeSectionColor(imageViewWheel, colorName, colorValue)
+            }
+                if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
+                    buttonAddEmotions.isEnabled = false
+                } else if (!buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt != -1) {
+                    buttonAddEmotions.isEnabled = true
                 }
-            })
         }
 
         buttonAddEmotions.setOnClickListener{
@@ -82,23 +91,96 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, EmotionsTableActivity::class.java)
             startActivity(intent)
         }
-    }
 
-    private fun getWheelCenterCoordinates(imageView: ImageView, callback: (Int, Int) -> Unit) {
+        imageViewWheel.setOnTouchListener { _, event ->
+            val bitmap = imageViewWheel.drawToBitmap()
+            val centerX = bitmap.width / 2
+            val centerY = bitmap.height / 2
 
-        val viewTreeObserver = imageView.viewTreeObserver
-        viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                imageView.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                val height = imageView.measuredHeight
-                val width = imageView.measuredWidth
-                val top = imageView.top
-                val left = imageView.left
-                val centerY = top + height / 2
-                val centerX = left + width / 2
-                callback(centerX, centerY)
+            return@setOnTouchListener when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    moved = false
+                    initialX = event.x
+                    initialY = event.y
+                    previousX = event.x
+                    previousY = event.y
+                    true
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    moved = true
+                    currentX = event.x
+                    currentY = event.y
+                    diffX = currentX - previousX
+                    diffY = currentY - previousY
+
+                    // Set initial direction
+                    when {
+                        currentX < initialX -> {
+                            swipeHorizontal = "LEFT"
+                        }
+                        currentX > initialX -> {
+                            swipeHorizontal = "RIGHT"
+                        }
+                        currentY < initialY -> {
+                            swipeVertical = "UP"
+                        }
+                        currentY > initialY -> {
+                            swipeVertical = "DOWN"
+                        }
+                    }
+
+                    // Reverse direction
+                    when {
+                        swipeHorizontal == "LEFT" && currentX > previousX -> {
+                            swipeHorizontal = "RIGHT"
+                            initialX = previousX
+                        }
+                        swipeHorizontal == "RIGHT" && currentX < previousX -> {
+                            swipeHorizontal = "LEFT"
+                            initialX = previousX
+                        }
+                        swipeVertical == "UP" && currentY > previousY -> {
+                            swipeVertical = "DOWN"
+                            initialY = previousY
+                        }
+                        swipeVertical == "DOWN" && currentY < previousY -> {
+                            swipeVertical = "UP"
+                            initialY = previousY
+                        }
+                    }
+
+                    previousX = currentX
+                    previousY = currentY
+
+                    // Do rotation based on vertical or horizontal swipe
+                    if (abs(diffX) > abs(diffY) && abs(diffX) > swipeThreshold) {
+                        if (currentY > centerY) onSwipe(-diffX) else onSwipe(diffX)
+                    } else
+                    if (abs(diffX) < abs(diffY) && abs(diffY) > swipeThreshold) {
+                        if (currentX > centerX) onSwipe(diffY) else onSwipe(-diffY)
+                    }
+
+                    true
+                }
+                MotionEvent.ACTION_UP -> {
+
+                    // If the wheel was not moved then there was a click action to selected a section
+                    if (!moved) {
+                        val colorPixel = bitmap.getPixel(initialX.toInt(), initialY.toInt())
+                        val colorSectionSelectedHex = String.format("#%02x%02x%02x", Color.red(colorPixel), Color.green(colorPixel), Color.blue(colorPixel))
+                        getPixelColorName(Integer.decode(colorSectionSelectedHex))
+                    }
+
+                    // Disabled animated rotation on finished swipe
+                    // onSwipeFinished(diffX)
+
+                    true
+                }
+                else -> {
+                    false
+                }
             }
-        })
+        }
     }
 
     private fun changeSectionColor(imageView: ImageView, colorNameCurrent: String, colorValueCurrent: Int) {

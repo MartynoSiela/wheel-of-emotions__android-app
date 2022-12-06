@@ -5,40 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/color_background">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.75"
-        android:orientation="horizontal"
-        />
+    android:background="@color/color_background" >
 
     <ImageView
         android:id="@+id/imageViewWheel"
-        android:layout_width="1000dp"
-        android:layout_height="1000dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:layout_marginTop="300dp"
         android:contentDescription="wheel"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline"
-        app:srcCompat="@drawable/wheel"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        android:src="@drawable/wheel" />
 
     <ImageView
         android:id="@+id/imageViewEmotions"
-        android:layout_width="1000dp"
-        android:layout_height="1000dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:layout_marginTop="300dp"
         android:contentDescription="emotions"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline"
-        app:srcCompat="@drawable/emotions"
-        tools:ignore="HardcodedText,MissingConstraints"
-         />
+        android:src="@drawable/emotions" />
 
     <Button
         android:id="@+id/button_add_emotion"
