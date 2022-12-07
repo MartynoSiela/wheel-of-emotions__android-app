@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         val swipeThreshold = 2f
         var initialX = 0f
         var initialY = 0f
+        var initialRawX = 0f
+        var initialRawY = 0f
         var previousX = 0f
         var previousY = 0f
         var currentX: Float
@@ -94,37 +96,39 @@ class MainActivity : AppCompatActivity() {
 
         imageViewWheel.setOnTouchListener { _, event ->
             val bitmap = imageViewWheel.drawToBitmap()
-            val centerX = bitmap.width / 2
-            val centerY = bitmap.height / 2
+            val centerX = bitmap.width / 2 + imageViewWheel.left
+            val centerY = bitmap.height / 2 + imageViewWheel.top
 
             return@setOnTouchListener when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     moved = false
                     initialX = event.x
                     initialY = event.y
-                    previousX = event.x
-                    previousY = event.y
+                    initialRawX = event.rawX
+                    initialRawY = event.rawY
+                    previousX = event.rawX
+                    previousY = event.rawY
                     true
                 }
                 MotionEvent.ACTION_MOVE -> {
                     moved = true
-                    currentX = event.x
-                    currentY = event.y
+                    currentX = event.rawX
+                    currentY = event.rawY
                     diffX = currentX - previousX
                     diffY = currentY - previousY
 
                     // Set initial direction
                     when {
-                        currentX < initialX -> {
+                        currentX < initialRawX -> {
                             swipeHorizontal = "LEFT"
                         }
-                        currentX > initialX -> {
+                        currentX > initialRawX -> {
                             swipeHorizontal = "RIGHT"
                         }
-                        currentY < initialY -> {
+                        currentY < initialRawY -> {
                             swipeVertical = "UP"
                         }
-                        currentY > initialY -> {
+                        currentY > initialRawY -> {
                             swipeVertical = "DOWN"
                         }
                     }
@@ -133,19 +137,19 @@ class MainActivity : AppCompatActivity() {
                     when {
                         swipeHorizontal == "LEFT" && currentX > previousX -> {
                             swipeHorizontal = "RIGHT"
-                            initialX = previousX
+                            initialRawX = previousX
                         }
                         swipeHorizontal == "RIGHT" && currentX < previousX -> {
                             swipeHorizontal = "LEFT"
-                            initialX = previousX
+                            initialRawX = previousX
                         }
                         swipeVertical == "UP" && currentY > previousY -> {
                             swipeVertical = "DOWN"
-                            initialY = previousY
+                            initialRawY = previousY
                         }
                         swipeVertical == "DOWN" && currentY < previousY -> {
                             swipeVertical = "UP"
-                            initialY = previousY
+                            initialRawY = previousY
                         }
                     }
 
