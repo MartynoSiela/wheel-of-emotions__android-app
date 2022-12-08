@@ -1,6 +1,7 @@
 package com.example.wheel_of_emotions
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +46,13 @@ class EmotionsTableActivity : AppCompatActivity() {
             do {
                 val tableRow: View = LayoutInflater.from(this).inflate(R.layout.table_row, null, false)
                 tableRow.findViewById<TextView>(R.id.row_id).text = data?.getString(0)
-                tableRow.findViewById<TextView>(R.id.row_emotion).text = data?.getString(1)
+                val emotionName = data?.getString(1)
+                val emotionNameCell = tableRow.findViewById<TextView>(R.id.row_emotion)
+                emotionNameCell.text = emotionName
+                val emotionColor = Color.parseColor(MainActivity.Feeling().getColorHexByFeelingName(emotionName))
+                // TODO find a way to maintain border color while changing background color
+                // emotionNameCell.backgroundTintList = ColorStateList.valueOf(emotionColor)
+                emotionNameCell.setBackgroundColor(emotionColor)
                 tableRow.findViewById<TextView>(R.id.row_date).text = data?.getString(2)?.let { formatDate(it) }
                 tableLayout.addView(tableRow)
             } while (data?.moveToNext() == true)
