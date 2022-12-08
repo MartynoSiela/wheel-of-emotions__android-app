@@ -2,6 +2,7 @@ package com.example.wheel_of_emotions
 
 import android.animation.Animator
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -15,6 +16,8 @@ import androidx.core.view.drawToBitmap
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 import com.devs.vectorchildfinder.VectorChildFinder
 import kotlin.math.abs
+import javax.xml.parsers.DocumentBuilderFactory
+import org.w3c.dom.Element
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageViewEmotions : ImageView
     private lateinit var buttonAddEmotions : Button
     private lateinit var buttonShowEmotions : Button
-    private lateinit var mapColors : MutableMap<Int, String>
 
     // Color for selected section
     private val colorSelectedRgb = Color.rgb(255,255,255)
@@ -56,11 +58,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
 
-        // Map is created to link section names with their colors
-        val values = arrayOf("angry", "disgusted", "sad", "happy", "surprised", "bad", "fearful", "aggressive", "frustrated", "distant", "critical", "disapproving", "disappointed_disgusted", "awful", "repelled", "hurt", "depressed", "guilty", "despair", "vulnerable", "lonely", "optimistic", "trusting", "peaceful", "powerful", "accepted", "proud", "interested", "content", "playful", "excited", "amazed", "confused", "startled", "tired", "stressed", "busy", "bored", "scared", "anxious", "insecure", "weak", "rejected", "threatened", "let_down", "humiliated", "bitter", "mad", "provoked", "hostile", "infuriated", "annoyed", "withdrawn", "numb", "sceptical", "dismissive", "judgemental", "embarrassed_disgusted", "appalled", "revolted", "nauseated", "detestable", "horrified", "hesitant", "embarrassed_sad", "disappointed_sad", "inferior_sad", "empty", "remorseful", "ashamed", "powerless", "grief", "fragile", "victimised", "abandoned", "isolated", "inspired", "hopeful", "intimate", "sensitive", "thankful", "loving", "creative", "courageous", "valued", "respected", "confident", "successful", "inquisitive", "curious", "joyful", "free", "cheeky", "aroused", "energetic", "eager", "awe", "astonished", "perplexed", "disillusioned", "dismayed", "shocked", "unfocussed", "sleepy", "out_of_control", "overwhelmed_bad", "rushed", "pressured", "apathetic", "indifferent", "helpless", "frightened", "overwhelmed_fearful", "worried", "inadequate", "inferior_fearful", "worthless", "insignificant", "excluded", "persecuted", "nervous", "exposed", "betrayed", "resentful", "disrespected", "ridiculed", "indignant", "violated", "furious", "jealous")
-        val keys = arrayOf(16739436, 13948116, 9159423, 16777053, 13806079, 11141033, 16761483, 16745861, 16747146, 16748431, 16749716, 14145495, 14277081, 14474460, 14606046, 11129599, 10801151, 10472959, 10144511, 9816063, 9487871, 16777058, 16777063, 16777068, 16777073, 16777078, 16777083, 16777088, 16777094, 16777099, 14532351, 14334463, 14136319, 14003967, 11468718, 11796403, 12189625, 12517310, 16765609, 16764836, 16764319, 16763546, 16762773, 16762256, 16740721, 16742006, 16743291, 16744576, 16760253, 16758968, 16757683, 16756398, 16755113, 16753828, 16752543, 16751258, 15921906, 15790320, 15592941, 15461355, 15263976, 15132390, 14935011, 14803425, 11458047, 11786239, 12180223, 12508671, 12837119, 13165311, 13493759, 13822207, 14150399, 14478847, 14807295, 15135487, 16777190, 16777185, 16777180, 16777175, 16777170, 16777165, 16777160, 16777155, 16777150, 16777145, 16777139, 16777134, 16777129, 16777124, 16777119, 16777114, 16777109, 16777104, 14730239, 14862591, 15060223, 15258367, 15390719, 15588607, 15786495, 15918847, 15138790, 14811105, 14483420, 14155735, 13828050, 13500365, 13172680, 12844995, 16766382, 16766899, 16767673, 16768446, 16769219, 16769736, 16770509, 16771282, 16771799, 16772572, 16773345, 16773862, 16770790, 16769505, 16768220, 16766935, 16765650, 16764365, 16762823, 16761538)
-        mapColors = mutableMapOf<Int, String>()
-            .apply { for (i in keys.indices) this[keys[i]] = values[i] }
+        Feeling().parseFeelingXml(this)
 
         imageViewWheel = findViewById(R.id.imageViewWheel)
         imageViewEmotions = findViewById(R.id.imageViewEmotions)
@@ -81,15 +79,13 @@ class MainActivity : AppCompatActivity() {
     private fun getPixelColorName(pixel: Int) {
         // Get color name and value of the currently selected section or the one that is being clicked
         val (colorName, colorValue) = if (pixel == colorSelectedInt) {
-            Pair(mapColors[colorValuePreviousRgbInt], colorValuePreviousRgbInt)
+            Pair(Feeling().getFeelingNameByColor(colorValuePreviousRgbInt), colorValuePreviousRgbInt)
         } else {
-            Pair(mapColors[pixel], pixel)
+            Pair(Feeling().getFeelingNameByColor(pixel), pixel)
         }
 
         // Change color of currently clicked section and restore previously selected one
-        if (colorName != null) {
-            changeSectionColor(imageViewWheel, colorName, colorValue)
-        }
+        changeSectionColor(imageViewWheel, colorName, colorValue)
 
         // Enable or disable button to add an emotion based on clicked section status
         if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
@@ -218,9 +214,9 @@ class MainActivity : AppCompatActivity() {
                     if (abs(diffX) > abs(diffY) && abs(diffX) > swipeThreshold) {
                         if (currentY > centerY) onSwipe(-diffX) else onSwipe(diffX)
                     } else
-                        if (abs(diffX) < abs(diffY) && abs(diffY) > swipeThreshold) {
-                            if (currentX > centerX) onSwipe(diffY) else onSwipe(-diffY)
-                        }
+                    if (abs(diffX) < abs(diffY) && abs(diffY) > swipeThreshold) {
+                        if (currentX > centerX) onSwipe(diffY) else onSwipe(-diffY)
+                    }
 
                     true
                 }
@@ -263,6 +259,66 @@ class MainActivity : AppCompatActivity() {
         override fun onClick(view: View) {
             val intent = Intent(this@MainActivity, EmotionsTableActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    class Feeling {
+        private var id: Int = 0
+        private var uniqueName: String = ""
+        private var position: String = ""
+        private var originCenterLt: String? = ""
+        private var originInnerLt: String? = ""
+        private var nameLt: String = ""
+        private var originCenterEn: String? = ""
+        private var originInnerEn: String? = ""
+        private var nameEn: String = ""
+        private var colorDec: Int = 0
+        private var colorHex: String = ""
+
+        companion object {
+            val feelings = mutableListOf<Feeling>()
+        }
+
+        private fun getContent(node: Element, tagName: String) : String {
+            return node.getElementsByTagName(tagName).item(0).textContent
+        }
+
+        private fun getContentNullable(node: Element, tagName: String) : String? {
+            val content = node.getElementsByTagName(tagName).item(0).textContent
+            return if (content == "x") null else content
+        }
+
+        fun getColorHexByFeelingName(name: String?): String {
+            return feelings.first() { it.uniqueName == name }.colorHex
+        }
+
+        fun getFeelingNameByColor(color: Int): String {
+            return feelings.first() { it.colorDec == color }.uniqueName
+        }
+
+        fun parseFeelingXml(context: Context) {
+
+            val factory = DocumentBuilderFactory.newInstance()
+            val builder = factory.newDocumentBuilder()
+            val inputStream = context.resources.openRawResource(R.raw.feelings)
+            val doc = builder.parse(inputStream)
+            val feelingNodes = doc.getElementsByTagName("feeling")
+            for (i in 0 until feelingNodes.length) {
+                val node = feelingNodes.item(i) as Element
+                val feeling = Feeling()
+                feeling.id = getContent(node, "id").toInt()
+                feeling.uniqueName = getContent(node, "unique_name")
+                feeling.position = getContent(node, "position")
+                feeling.originCenterLt = getContentNullable(node, "origin_center_lt")
+                feeling.originInnerLt = getContentNullable(node, "origin_inner_lt")
+                feeling.nameLt = getContent(node, "name_lt")
+                feeling.originCenterEn = getContentNullable(node, "origin_center_en")
+                feeling.originInnerEn = getContentNullable(node, "origin_inner_en")
+                feeling.nameEn = getContent(node, "name_en")
+                feeling.colorDec = getContent(node, "color_dec").toInt()
+                feeling.colorHex = getContent(node, "color_hex")
+                feelings.add(feeling)
+            }
         }
     }
 }
