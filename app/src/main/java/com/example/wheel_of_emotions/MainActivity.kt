@@ -274,6 +274,10 @@ class MainActivity : AppCompatActivity() {
         private var nameEn: String = ""
         private var colorDec: Int = 0
         private var colorHex: String = ""
+        private var colorR: Int = 0
+        private var colorG: Int = 0
+        private var colorB: Int = 0
+        private var colorARGB: Int = 0
 
         companion object {
             val feelings = mutableListOf<Feeling>()
@@ -288,8 +292,8 @@ class MainActivity : AppCompatActivity() {
             return if (content == "x") null else content
         }
 
-        fun getColorHexByFeelingName(name: String?): String {
-            return feelings.first() { it.uniqueName == name }.colorHex
+        fun getColorARGBByFeelingName(name: String?): Int {
+            return feelings.first() { it.uniqueName == name }.colorARGB
         }
 
         fun getFeelingNameByColor(color: Int): String {
@@ -317,6 +321,10 @@ class MainActivity : AppCompatActivity() {
                 feeling.nameEn = getContent(node, "name_en")
                 feeling.colorDec = getContent(node, "color_dec").toInt()
                 feeling.colorHex = getContent(node, "color_hex")
+                feeling.colorR = getContent(node, "color_r").toInt()
+                feeling.colorG = getContent(node, "color_g").toInt()
+                feeling.colorB = getContent(node, "color_b").toInt()
+                feeling.colorARGB = Color.argb(255, feeling.colorR, feeling.colorG, feeling.colorB)
                 feelings.add(feeling)
             }
         }

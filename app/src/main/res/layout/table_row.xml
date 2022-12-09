@@ -3,31 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-
     <TextView
-        android:id="@+id/row_id"
+        android:id="@+id/column_id"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.1"
         android:gravity="center"
-        android:background="@drawable/table_cell"
         android:layout_marginStart="5dp"/>
 
     <TextView
-        android:id="@+id/row_emotion"
+        android:id="@+id/column_emotion"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:gravity="center"
-        android:background="@drawable/table_cell"/>
+        android:gravity="center" />
 
     <TextView
-        android:id="@+id/row_date"
+        android:id="@+id/column_date"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.4"
         android:gravity="center"
-        android:background="@drawable/table_cell"
         android:layout_marginEnd="5dp"/>
-
 </TableRow>

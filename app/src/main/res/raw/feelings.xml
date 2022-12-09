@@ -10,7 +10,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Angry</name_en>
         <color_dec>16739436</color_dec>
-        <color_hex>#FF6C6C</color_hex>
+        <color_hex>FF6C6C</color_hex>
+        <color_r>255</color_r>
+        <color_g>108</color_g>
+        <color_b>108</color_b>
     </feeling>
     <feeling>
         <id>2</id>
@@ -23,7 +26,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Disgusted</name_en>
         <color_dec>13948116</color_dec>
-        <color_hex>#D4D4D4</color_hex>
+        <color_hex>D4D4D4</color_hex>
+        <color_r>212</color_r>
+        <color_g>212</color_g>
+        <color_b>212</color_b>
     </feeling>
     <feeling>
         <id>3</id>
@@ -36,7 +42,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Sad</name_en>
         <color_dec>9159423</color_dec>
-        <color_hex>#8BC2FF</color_hex>
+        <color_hex>8BC2FF</color_hex>
+        <color_r>139</color_r>
+        <color_g>194</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>4</id>
@@ -49,7 +58,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Happy</name_en>
         <color_dec>16777053</color_dec>
-        <color_hex>#FFFF5D</color_hex>
+        <color_hex>FFFF5D</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>93</color_b>
     </feeling>
     <feeling>
         <id>5</id>
@@ -62,7 +74,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Surprised</name_en>
         <color_dec>13806079</color_dec>
-        <color_hex>#D2A9FF</color_hex>
+        <color_hex>D2A9FF</color_hex>
+        <color_r>210</color_r>
+        <color_g>169</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>6</id>
@@ -75,7 +90,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Bad</name_en>
         <color_dec>11141033</color_dec>
-        <color_hex>#A9FFA9</color_hex>
+        <color_hex>A9FFA9</color_hex>
+        <color_r>169</color_r>
+        <color_g>255</color_g>
+        <color_b>169</color_b>
     </feeling>
     <feeling>
         <id>7</id>
@@ -88,7 +106,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Fearful</name_en>
         <color_dec>16761483</color_dec>
-        <color_hex>#FFC28B</color_hex>
+        <color_hex>FFC28B</color_hex>
+        <color_r>255</color_r>
+        <color_g>194</color_g>
+        <color_b>139</color_b>
     </feeling>
     <feeling>
         <id>8</id>
@@ -101,7 +122,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Aggressive</name_en>
         <color_dec>16745861</color_dec>
-        <color_hex>#FF8585</color_hex>
+        <color_hex>FF8585</color_hex>
+        <color_r>255</color_r>
+        <color_g>133</color_g>
+        <color_b>133</color_b>
     </feeling>
     <feeling>
         <id>9</id>
@@ -114,7 +138,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Frustrated</name_en>
         <color_dec>16747146</color_dec>
-        <color_hex>#FF8A8A</color_hex>
+        <color_hex>FF8A8A</color_hex>
+        <color_r>255</color_r>
+        <color_g>138</color_g>
+        <color_b>138</color_b>
     </feeling>
     <feeling>
         <id>10</id>
@@ -127,7 +154,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Distant</name_en>
         <color_dec>16748431</color_dec>
-        <color_hex>#FF8F8F</color_hex>
+        <color_hex>FF8F8F</color_hex>
+        <color_r>255</color_r>
+        <color_g>143</color_g>
+        <color_b>143</color_b>
     </feeling>
     <feeling>
         <id>11</id>
@@ -140,7 +170,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Critical</name_en>
         <color_dec>16749716</color_dec>
-        <color_hex>#FF9494</color_hex>
+        <color_hex>FF9494</color_hex>
+        <color_r>255</color_r>
+        <color_g>148</color_g>
+        <color_b>148</color_b>
     </feeling>
     <feeling>
         <id>12</id>
@@ -153,7 +186,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Disapproving</name_en>
         <color_dec>14145495</color_dec>
-        <color_hex>#D7D7D7</color_hex>
+        <color_hex>D7D7D7</color_hex>
+        <color_r>215</color_r>
+        <color_g>215</color_g>
+        <color_b>215</color_b>
     </feeling>
     <feeling>
         <id>13</id>
@@ -166,7 +202,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Disappointed</name_en>
         <color_dec>14277081</color_dec>
-        <color_hex>#D9D9D9</color_hex>
+        <color_hex>D9D9D9</color_hex>
+        <color_r>217</color_r>
+        <color_g>217</color_g>
+        <color_b>217</color_b>
     </feeling>
     <feeling>
         <id>14</id>
@@ -179,7 +218,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Awful</name_en>
         <color_dec>14474460</color_dec>
-        <color_hex>#DCDCDC</color_hex>
+        <color_hex>DCDCDC</color_hex>
+        <color_r>220</color_r>
+        <color_g>220</color_g>
+        <color_b>220</color_b>
     </feeling>
     <feeling>
         <id>15</id>
@@ -192,7 +234,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Repelled</name_en>
         <color_dec>14606046</color_dec>
-        <color_hex>#DEDEDE</color_hex>
+        <color_hex>DEDEDE</color_hex>
+        <color_r>222</color_r>
+        <color_g>222</color_g>
+        <color_b>222</color_b>
     </feeling>
     <feeling>
         <id>16</id>
@@ -205,7 +250,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Hurt</name_en>
         <color_dec>11129599</color_dec>
-        <color_hex>#A9D2FF</color_hex>
+        <color_hex>A9D2FF</color_hex>
+        <color_r>169</color_r>
+        <color_g>210</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>17</id>
@@ -218,7 +266,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Depressed</name_en>
         <color_dec>10801151</color_dec>
-        <color_hex>#A4CFFF</color_hex>
+        <color_hex>A4CFFF</color_hex>
+        <color_r>164</color_r>
+        <color_g>207</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>18</id>
@@ -231,7 +282,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Guilty</name_en>
         <color_dec>10472959</color_dec>
-        <color_hex>#9FCDFF</color_hex>
+        <color_hex>9FCDFF</color_hex>
+        <color_r>159</color_r>
+        <color_g>205</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>19</id>
@@ -244,7 +298,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Despair</name_en>
         <color_dec>10144511</color_dec>
-        <color_hex>#9ACAFF</color_hex>
+        <color_hex>9ACAFF</color_hex>
+        <color_r>154</color_r>
+        <color_g>202</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>20</id>
@@ -257,7 +314,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Vulnerable</name_en>
         <color_dec>9816063</color_dec>
-        <color_hex>#95C7FF</color_hex>
+        <color_hex>95C7FF</color_hex>
+        <color_r>149</color_r>
+        <color_g>199</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>21</id>
@@ -270,7 +330,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Lonely</name_en>
         <color_dec>9487871</color_dec>
-        <color_hex>#90C5FF</color_hex>
+        <color_hex>90C5FF</color_hex>
+        <color_r>144</color_r>
+        <color_g>197</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>22</id>
@@ -283,7 +346,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Optimistic</name_en>
         <color_dec>16777058</color_dec>
-        <color_hex>#FFFF62</color_hex>
+        <color_hex>FFFF62</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>98</color_b>
     </feeling>
     <feeling>
         <id>23</id>
@@ -296,7 +362,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Trusting</name_en>
         <color_dec>16777063</color_dec>
-        <color_hex>#FFFF67</color_hex>
+        <color_hex>FFFF67</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>103</color_b>
     </feeling>
     <feeling>
         <id>24</id>
@@ -309,7 +378,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Peaceful</name_en>
         <color_dec>16777068</color_dec>
-        <color_hex>#FFFF6C</color_hex>
+        <color_hex>FFFF6C</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>108</color_b>
     </feeling>
     <feeling>
         <id>25</id>
@@ -322,7 +394,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Powerful</name_en>
         <color_dec>16777073</color_dec>
-        <color_hex>#FFFF71</color_hex>
+        <color_hex>FFFF71</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>113</color_b>
     </feeling>
     <feeling>
         <id>26</id>
@@ -335,7 +410,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Accepted</name_en>
         <color_dec>16777078</color_dec>
-        <color_hex>#FFFF76</color_hex>
+        <color_hex>FFFF76</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>118</color_b>
     </feeling>
     <feeling>
         <id>27</id>
@@ -348,7 +426,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Proud</name_en>
         <color_dec>16777083</color_dec>
-        <color_hex>#FFFF7B</color_hex>
+        <color_hex>FFFF7B</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>123</color_b>
     </feeling>
     <feeling>
         <id>28</id>
@@ -361,7 +442,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Interested</name_en>
         <color_dec>16777088</color_dec>
-        <color_hex>#FFFF80</color_hex>
+        <color_hex>FFFF80</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>128</color_b>
     </feeling>
     <feeling>
         <id>29</id>
@@ -374,7 +458,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Content</name_en>
         <color_dec>16777094</color_dec>
-        <color_hex>#FFFF86</color_hex>
+        <color_hex>FFFF86</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>134</color_b>
     </feeling>
     <feeling>
         <id>30</id>
@@ -387,7 +474,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Playful</name_en>
         <color_dec>16777099</color_dec>
-        <color_hex>#FFFF8B</color_hex>
+        <color_hex>FFFF8B</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>139</color_b>
     </feeling>
     <feeling>
         <id>31</id>
@@ -400,7 +490,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Excited</name_en>
         <color_dec>14532351</color_dec>
-        <color_hex>#DDBEFF</color_hex>
+        <color_hex>DDBEFF</color_hex>
+        <color_r>221</color_r>
+        <color_g>190</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>32</id>
@@ -413,7 +506,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Amazed</name_en>
         <color_dec>14334463</color_dec>
-        <color_hex>#DAB9FF</color_hex>
+        <color_hex>DAB9FF</color_hex>
+        <color_r>218</color_r>
+        <color_g>185</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>33</id>
@@ -426,7 +522,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Confused</name_en>
         <color_dec>14136319</color_dec>
-        <color_hex>#D7B3FF</color_hex>
+        <color_hex>D7B3FF</color_hex>
+        <color_r>215</color_r>
+        <color_g>179</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>34</id>
@@ -439,7 +538,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Startled</name_en>
         <color_dec>14003967</color_dec>
-        <color_hex>#D5AEFF</color_hex>
+        <color_hex>D5AEFF</color_hex>
+        <color_r>213</color_r>
+        <color_g>174</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>35</id>
@@ -452,7 +554,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Tired</name_en>
         <color_dec>11468718</color_dec>
-        <color_hex>#AEFFAE</color_hex>
+        <color_hex>AEFFAE</color_hex>
+        <color_r>174</color_r>
+        <color_g>255</color_g>
+        <color_b>174</color_b>
     </feeling>
     <feeling>
         <id>36</id>
@@ -465,7 +570,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Stressed</name_en>
         <color_dec>11796403</color_dec>
-        <color_hex>#B3FFB3</color_hex>
+        <color_hex>B3FFB3</color_hex>
+        <color_r>179</color_r>
+        <color_g>255</color_g>
+        <color_b>179</color_b>
     </feeling>
     <feeling>
         <id>37</id>
@@ -478,7 +586,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Busy</name_en>
         <color_dec>12189625</color_dec>
-        <color_hex>#B9FFB9</color_hex>
+        <color_hex>B9FFB9</color_hex>
+        <color_r>185</color_r>
+        <color_g>255</color_g>
+        <color_b>185</color_b>
     </feeling>
     <feeling>
         <id>38</id>
@@ -491,7 +602,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Bored</name_en>
         <color_dec>12517310</color_dec>
-        <color_hex>#BEFFBE</color_hex>
+        <color_hex>BEFFBE</color_hex>
+        <color_r>190</color_r>
+        <color_g>255</color_g>
+        <color_b>190</color_b>
     </feeling>
     <feeling>
         <id>39</id>
@@ -504,7 +618,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Scared</name_en>
         <color_dec>16765609</color_dec>
-        <color_hex>#FFD2A9</color_hex>
+        <color_hex>FFD2A9</color_hex>
+        <color_r>255</color_r>
+        <color_g>210</color_g>
+        <color_b>169</color_b>
     </feeling>
     <feeling>
         <id>40</id>
@@ -517,7 +634,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Anxious</name_en>
         <color_dec>16764836</color_dec>
-        <color_hex>#FFCFA4</color_hex>
+        <color_hex>FFCFA4</color_hex>
+        <color_r>255</color_r>
+        <color_g>207</color_g>
+        <color_b>164</color_b>
     </feeling>
     <feeling>
         <id>41</id>
@@ -530,7 +650,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Insecure</name_en>
         <color_dec>16764319</color_dec>
-        <color_hex>#FFCD9F</color_hex>
+        <color_hex>FFCD9F</color_hex>
+        <color_r>255</color_r>
+        <color_g>205</color_g>
+        <color_b>159</color_b>
     </feeling>
     <feeling>
         <id>42</id>
@@ -543,7 +666,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Weak</name_en>
         <color_dec>16763546</color_dec>
-        <color_hex>#FFCA9A</color_hex>
+        <color_hex>FFCA9A</color_hex>
+        <color_r>255</color_r>
+        <color_g>202</color_g>
+        <color_b>154</color_b>
     </feeling>
     <feeling>
         <id>43</id>
@@ -556,7 +682,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Rejected</name_en>
         <color_dec>16762773</color_dec>
-        <color_hex>#FFC795</color_hex>
+        <color_hex>FFC795</color_hex>
+        <color_r>255</color_r>
+        <color_g>199</color_g>
+        <color_b>149</color_b>
     </feeling>
     <feeling>
         <id>44</id>
@@ -569,7 +698,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Threatened</name_en>
         <color_dec>16762256</color_dec>
-        <color_hex>#FFC590</color_hex>
+        <color_hex>FFC590</color_hex>
+        <color_r>255</color_r>
+        <color_g>197</color_g>
+        <color_b>144</color_b>
     </feeling>
     <feeling>
         <id>45</id>
@@ -582,7 +714,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Let down</name_en>
         <color_dec>16740721</color_dec>
-        <color_hex>#FF7171</color_hex>
+        <color_hex>FF7171</color_hex>
+        <color_r>255</color_r>
+        <color_g>113</color_g>
+        <color_b>113</color_b>
     </feeling>
     <feeling>
         <id>46</id>
@@ -595,7 +730,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Humiliated</name_en>
         <color_dec>16742006</color_dec>
-        <color_hex>#FF7676</color_hex>
+        <color_hex>FF7676</color_hex>
+        <color_r>255</color_r>
+        <color_g>118</color_g>
+        <color_b>118</color_b>
     </feeling>
     <feeling>
         <id>47</id>
@@ -608,7 +746,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Bitter</name_en>
         <color_dec>16743291</color_dec>
-        <color_hex>#FF7B7B</color_hex>
+        <color_hex>FF7B7B</color_hex>
+        <color_r>255</color_r>
+        <color_g>123</color_g>
+        <color_b>123</color_b>
     </feeling>
     <feeling>
         <id>48</id>
@@ -621,7 +762,10 @@
         <origin_inner_en>x</origin_inner_en>
         <name_en>Mad</name_en>
         <color_dec>16744576</color_dec>
-        <color_hex>#FF8080</color_hex>
+        <color_hex>FF8080</color_hex>
+        <color_r>255</color_r>
+        <color_g>128</color_g>
+        <color_b>128</color_b>
     </feeling>
     <feeling>
         <id>49</id>
@@ -634,7 +778,10 @@
         <origin_inner_en>Aggressive</origin_inner_en>
         <name_en>Provoked</name_en>
         <color_dec>16760253</color_dec>
-        <color_hex>#FFBDBD</color_hex>
+        <color_hex>FFBDBD</color_hex>
+        <color_r>255</color_r>
+        <color_g>189</color_g>
+        <color_b>189</color_b>
     </feeling>
     <feeling>
         <id>50</id>
@@ -647,7 +794,10 @@
         <origin_inner_en>Aggressive</origin_inner_en>
         <name_en>Hostile</name_en>
         <color_dec>16758968</color_dec>
-        <color_hex>#FFB8B8</color_hex>
+        <color_hex>FFB8B8</color_hex>
+        <color_r>255</color_r>
+        <color_g>184</color_g>
+        <color_b>184</color_b>
     </feeling>
     <feeling>
         <id>51</id>
@@ -660,7 +810,10 @@
         <origin_inner_en>Frustrated</origin_inner_en>
         <name_en>Infuriated</name_en>
         <color_dec>16757683</color_dec>
-        <color_hex>#FFB3B3</color_hex>
+        <color_hex>FFB3B3</color_hex>
+        <color_r>255</color_r>
+        <color_g>179</color_g>
+        <color_b>179</color_b>
     </feeling>
     <feeling>
         <id>52</id>
@@ -673,7 +826,10 @@
         <origin_inner_en>Frustrated</origin_inner_en>
         <name_en>Annoyed</name_en>
         <color_dec>16756398</color_dec>
-        <color_hex>#FFAEAE</color_hex>
+        <color_hex>FFAEAE</color_hex>
+        <color_r>255</color_r>
+        <color_g>174</color_g>
+        <color_b>174</color_b>
     </feeling>
     <feeling>
         <id>53</id>
@@ -686,7 +842,10 @@
         <origin_inner_en>Distant</origin_inner_en>
         <name_en>Withdrawn</name_en>
         <color_dec>16755113</color_dec>
-        <color_hex>#FFA9A9</color_hex>
+        <color_hex>FFA9A9</color_hex>
+        <color_r>255</color_r>
+        <color_g>169</color_g>
+        <color_b>169</color_b>
     </feeling>
     <feeling>
         <id>54</id>
@@ -699,7 +858,10 @@
         <origin_inner_en>Distant</origin_inner_en>
         <name_en>Numb</name_en>
         <color_dec>16753828</color_dec>
-        <color_hex>#FFA4A4</color_hex>
+        <color_hex>FFA4A4</color_hex>
+        <color_r>255</color_r>
+        <color_g>164</color_g>
+        <color_b>164</color_b>
     </feeling>
     <feeling>
         <id>55</id>
@@ -712,7 +874,10 @@
         <origin_inner_en>Critical</origin_inner_en>
         <name_en>Sceptical</name_en>
         <color_dec>16752543</color_dec>
-        <color_hex>#FF9F9F</color_hex>
+        <color_hex>FF9F9F</color_hex>
+        <color_r>255</color_r>
+        <color_g>159</color_g>
+        <color_b>159</color_b>
     </feeling>
     <feeling>
         <id>56</id>
@@ -725,7 +890,10 @@
         <origin_inner_en>Critical</origin_inner_en>
         <name_en>Dismissive</name_en>
         <color_dec>16751258</color_dec>
-        <color_hex>#FF9A9A</color_hex>
+        <color_hex>FF9A9A</color_hex>
+        <color_r>255</color_r>
+        <color_g>154</color_g>
+        <color_b>154</color_b>
     </feeling>
     <feeling>
         <id>57</id>
@@ -738,7 +906,10 @@
         <origin_inner_en>Disapproving</origin_inner_en>
         <name_en>Judgemental</name_en>
         <color_dec>15921906</color_dec>
-        <color_hex>#F2F2F2</color_hex>
+        <color_hex>F2F2F2</color_hex>
+        <color_r>242</color_r>
+        <color_g>242</color_g>
+        <color_b>242</color_b>
     </feeling>
     <feeling>
         <id>58</id>
@@ -751,7 +922,10 @@
         <origin_inner_en>Disapproving</origin_inner_en>
         <name_en>Embarrassed</name_en>
         <color_dec>15790320</color_dec>
-        <color_hex>#F0F0F0</color_hex>
+        <color_hex>F0F0F0</color_hex>
+        <color_r>240</color_r>
+        <color_g>240</color_g>
+        <color_b>240</color_b>
     </feeling>
     <feeling>
         <id>59</id>
@@ -764,7 +938,10 @@
         <origin_inner_en>Disappointed</origin_inner_en>
         <name_en>Appalled</name_en>
         <color_dec>15592941</color_dec>
-        <color_hex>#EDEDED</color_hex>
+        <color_hex>EDEDED</color_hex>
+        <color_r>237</color_r>
+        <color_g>237</color_g>
+        <color_b>237</color_b>
     </feeling>
     <feeling>
         <id>60</id>
@@ -777,7 +954,10 @@
         <origin_inner_en>Disappointed</origin_inner_en>
         <name_en>Revolted</name_en>
         <color_dec>15461355</color_dec>
-        <color_hex>#EBEBEB</color_hex>
+        <color_hex>EBEBEB</color_hex>
+        <color_r>235</color_r>
+        <color_g>235</color_g>
+        <color_b>235</color_b>
     </feeling>
     <feeling>
         <id>61</id>
@@ -790,7 +970,10 @@
         <origin_inner_en>Awful</origin_inner_en>
         <name_en>Nauseated</name_en>
         <color_dec>15263976</color_dec>
-        <color_hex>#E8E8E8</color_hex>
+        <color_hex>E8E8E8</color_hex>
+        <color_r>232</color_r>
+        <color_g>232</color_g>
+        <color_b>232</color_b>
     </feeling>
     <feeling>
         <id>62</id>
@@ -803,7 +986,10 @@
         <origin_inner_en>Awful</origin_inner_en>
         <name_en>Detestable</name_en>
         <color_dec>15132390</color_dec>
-        <color_hex>#E6E6E6</color_hex>
+        <color_hex>E6E6E6</color_hex>
+        <color_r>230</color_r>
+        <color_g>230</color_g>
+        <color_b>230</color_b>
     </feeling>
     <feeling>
         <id>63</id>
@@ -816,7 +1002,10 @@
         <origin_inner_en>Repelled</origin_inner_en>
         <name_en>Horrified</name_en>
         <color_dec>14935011</color_dec>
-        <color_hex>#E3E3E3</color_hex>
+        <color_hex>E3E3E3</color_hex>
+        <color_r>227</color_r>
+        <color_g>227</color_g>
+        <color_b>227</color_b>
     </feeling>
     <feeling>
         <id>64</id>
@@ -829,7 +1018,10 @@
         <origin_inner_en>Repelled</origin_inner_en>
         <name_en>Hesitant</name_en>
         <color_dec>14803425</color_dec>
-        <color_hex>#E1E1E1</color_hex>
+        <color_hex>E1E1E1</color_hex>
+        <color_r>225</color_r>
+        <color_g>225</color_g>
+        <color_b>225</color_b>
     </feeling>
     <feeling>
         <id>65</id>
@@ -842,7 +1034,10 @@
         <origin_inner_en>Hurt</origin_inner_en>
         <name_en>Embarrassed</name_en>
         <color_dec>11458047</color_dec>
-        <color_hex>#AED5FF</color_hex>
+        <color_hex>AED5FF</color_hex>
+        <color_r>174</color_r>
+        <color_g>213</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>66</id>
@@ -855,7 +1050,10 @@
         <origin_inner_en>Hurt</origin_inner_en>
         <name_en>Disappointed</name_en>
         <color_dec>11786239</color_dec>
-        <color_hex>#B3D7FF</color_hex>
+        <color_hex>B3D7FF</color_hex>
+        <color_r>179</color_r>
+        <color_g>215</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>67</id>
@@ -868,7 +1066,10 @@
         <origin_inner_en>Depressed</origin_inner_en>
         <name_en>Inferior</name_en>
         <color_dec>12180223</color_dec>
-        <color_hex>#B9DAFF</color_hex>
+        <color_hex>B9DAFF</color_hex>
+        <color_r>185</color_r>
+        <color_g>218</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>68</id>
@@ -881,7 +1082,10 @@
         <origin_inner_en>Depressed</origin_inner_en>
         <name_en>Empty</name_en>
         <color_dec>12508671</color_dec>
-        <color_hex>#BEDDFF</color_hex>
+        <color_hex>BEDDFF</color_hex>
+        <color_r>190</color_r>
+        <color_g>221</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>69</id>
@@ -894,7 +1098,10 @@
         <origin_inner_en>Guilty</origin_inner_en>
         <name_en>Remorseful</name_en>
         <color_dec>12837119</color_dec>
-        <color_hex>#C3E0FF</color_hex>
+        <color_hex>C3E0FF</color_hex>
+        <color_r>195</color_r>
+        <color_g>224</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>70</id>
@@ -907,7 +1114,10 @@
         <origin_inner_en>Guilty</origin_inner_en>
         <name_en>Ashamed</name_en>
         <color_dec>13165311</color_dec>
-        <color_hex>#C8E2FF</color_hex>
+        <color_hex>C8E2FF</color_hex>
+        <color_r>200</color_r>
+        <color_g>226</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>71</id>
@@ -920,7 +1130,10 @@
         <origin_inner_en>Despair</origin_inner_en>
         <name_en>Powerless</name_en>
         <color_dec>13493759</color_dec>
-        <color_hex>#CDE5FF</color_hex>
+        <color_hex>CDE5FF</color_hex>
+        <color_r>205</color_r>
+        <color_g>229</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>72</id>
@@ -933,7 +1146,10 @@
         <origin_inner_en>Despair</origin_inner_en>
         <name_en>Grief</name_en>
         <color_dec>13822207</color_dec>
-        <color_hex>#D2E8FF</color_hex>
+        <color_hex>D2E8FF</color_hex>
+        <color_r>210</color_r>
+        <color_g>232</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>73</id>
@@ -946,7 +1162,10 @@
         <origin_inner_en>Vulnerable</origin_inner_en>
         <name_en>Fragile</name_en>
         <color_dec>14150399</color_dec>
-        <color_hex>#D7EAFF</color_hex>
+        <color_hex>D7EAFF</color_hex>
+        <color_r>215</color_r>
+        <color_g>234</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>74</id>
@@ -959,7 +1178,10 @@
         <origin_inner_en>Vulnerable</origin_inner_en>
         <name_en>Victimised</name_en>
         <color_dec>14478847</color_dec>
-        <color_hex>#DCEDFF</color_hex>
+        <color_hex>DCEDFF</color_hex>
+        <color_r>220</color_r>
+        <color_g>237</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>75</id>
@@ -972,7 +1194,10 @@
         <origin_inner_en>Lonely</origin_inner_en>
         <name_en>Abandoned</name_en>
         <color_dec>14807295</color_dec>
-        <color_hex>#E1F0FF</color_hex>
+        <color_hex>E1F0FF</color_hex>
+        <color_r>225</color_r>
+        <color_g>240</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>76</id>
@@ -985,7 +1210,10 @@
         <origin_inner_en>Lonely</origin_inner_en>
         <name_en>Isolated</name_en>
         <color_dec>15135487</color_dec>
-        <color_hex>#E6F2FF</color_hex>
+        <color_hex>E6F2FF</color_hex>
+        <color_r>230</color_r>
+        <color_g>242</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>77</id>
@@ -998,7 +1226,10 @@
         <origin_inner_en>Optimistic</origin_inner_en>
         <name_en>Inspired</name_en>
         <color_dec>16777190</color_dec>
-        <color_hex>#FFFFE6</color_hex>
+        <color_hex>FFFFE6</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>230</color_b>
     </feeling>
     <feeling>
         <id>78</id>
@@ -1011,7 +1242,10 @@
         <origin_inner_en>Optimistic</origin_inner_en>
         <name_en>Hopeful</name_en>
         <color_dec>16777185</color_dec>
-        <color_hex>#FFFFE1</color_hex>
+        <color_hex>FFFFE1</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>225</color_b>
     </feeling>
     <feeling>
         <id>79</id>
@@ -1024,7 +1258,10 @@
         <origin_inner_en>Trusting</origin_inner_en>
         <name_en>Intimate</name_en>
         <color_dec>16777180</color_dec>
-        <color_hex>#FFFFDC</color_hex>
+        <color_hex>FFFFDC</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>220</color_b>
     </feeling>
     <feeling>
         <id>80</id>
@@ -1037,7 +1274,10 @@
         <origin_inner_en>Trusting</origin_inner_en>
         <name_en>Sensitive</name_en>
         <color_dec>16777175</color_dec>
-        <color_hex>#FFFFD7</color_hex>
+        <color_hex>FFFFD7</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>215</color_b>
     </feeling>
     <feeling>
         <id>81</id>
@@ -1050,7 +1290,10 @@
         <origin_inner_en>Peaceful</origin_inner_en>
         <name_en>Thankful</name_en>
         <color_dec>16777170</color_dec>
-        <color_hex>#FFFFD2</color_hex>
+        <color_hex>FFFFD2</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>210</color_b>
     </feeling>
     <feeling>
         <id>82</id>
@@ -1063,7 +1306,10 @@
         <origin_inner_en>Peaceful</origin_inner_en>
         <name_en>Loving</name_en>
         <color_dec>16777165</color_dec>
-        <color_hex>#FFFFCD</color_hex>
+        <color_hex>FFFFCD</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>205</color_b>
     </feeling>
     <feeling>
         <id>83</id>
@@ -1076,7 +1322,10 @@
         <origin_inner_en>Powerful</origin_inner_en>
         <name_en>Creative</name_en>
         <color_dec>16777160</color_dec>
-        <color_hex>#FFFFC8</color_hex>
+        <color_hex>FFFFC8</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>200</color_b>
     </feeling>
     <feeling>
         <id>84</id>
@@ -1089,7 +1338,10 @@
         <origin_inner_en>Powerful</origin_inner_en>
         <name_en>Courageous</name_en>
         <color_dec>16777155</color_dec>
-        <color_hex>#FFFFC3</color_hex>
+        <color_hex>FFFFC3</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>195</color_b>
     </feeling>
     <feeling>
         <id>85</id>
@@ -1102,7 +1354,10 @@
         <origin_inner_en>Accepted</origin_inner_en>
         <name_en>Valued</name_en>
         <color_dec>16777150</color_dec>
-        <color_hex>#FFFFBE</color_hex>
+        <color_hex>FFFFBE</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>190</color_b>
     </feeling>
     <feeling>
         <id>86</id>
@@ -1115,7 +1370,10 @@
         <origin_inner_en>Accepted</origin_inner_en>
         <name_en>Respected</name_en>
         <color_dec>16777145</color_dec>
-        <color_hex>#FFFFB9</color_hex>
+        <color_hex>FFFFB9</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>185</color_b>
     </feeling>
     <feeling>
         <id>87</id>
@@ -1128,7 +1386,10 @@
         <origin_inner_en>Proud</origin_inner_en>
         <name_en>Confident</name_en>
         <color_dec>16777139</color_dec>
-        <color_hex>#FFFFB3</color_hex>
+        <color_hex>FFFFB3</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>179</color_b>
     </feeling>
     <feeling>
         <id>88</id>
@@ -1141,7 +1402,10 @@
         <origin_inner_en>Proud</origin_inner_en>
         <name_en>Successful</name_en>
         <color_dec>16777134</color_dec>
-        <color_hex>#FFFFAE</color_hex>
+        <color_hex>FFFFAE</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>174</color_b>
     </feeling>
     <feeling>
         <id>89</id>
@@ -1154,7 +1418,10 @@
         <origin_inner_en>Interested</origin_inner_en>
         <name_en>Inquisitive</name_en>
         <color_dec>16777129</color_dec>
-        <color_hex>#FFFFA9</color_hex>
+        <color_hex>FFFFA9</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>169</color_b>
     </feeling>
     <feeling>
         <id>90</id>
@@ -1167,7 +1434,10 @@
         <origin_inner_en>Interested</origin_inner_en>
         <name_en>Curious</name_en>
         <color_dec>16777124</color_dec>
-        <color_hex>#FFFFA4</color_hex>
+        <color_hex>FFFFA4</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>164</color_b>
     </feeling>
     <feeling>
         <id>91</id>
@@ -1180,7 +1450,10 @@
         <origin_inner_en>Content</origin_inner_en>
         <name_en>Joyful</name_en>
         <color_dec>16777119</color_dec>
-        <color_hex>#FFFF9F</color_hex>
+        <color_hex>FFFF9F</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>159</color_b>
     </feeling>
     <feeling>
         <id>92</id>
@@ -1193,7 +1466,10 @@
         <origin_inner_en>Content</origin_inner_en>
         <name_en>Free</name_en>
         <color_dec>16777114</color_dec>
-        <color_hex>#FFFF9A</color_hex>
+        <color_hex>FFFF9A</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>154</color_b>
     </feeling>
     <feeling>
         <id>93</id>
@@ -1206,7 +1482,10 @@
         <origin_inner_en>Playful</origin_inner_en>
         <name_en>Cheeky</name_en>
         <color_dec>16777109</color_dec>
-        <color_hex>#FFFF95</color_hex>
+        <color_hex>FFFF95</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>149</color_b>
     </feeling>
     <feeling>
         <id>94</id>
@@ -1219,7 +1498,10 @@
         <origin_inner_en>Playful</origin_inner_en>
         <name_en>Aroused</name_en>
         <color_dec>16777104</color_dec>
-        <color_hex>#FFFF90</color_hex>
+        <color_hex>FFFF90</color_hex>
+        <color_r>255</color_r>
+        <color_g>255</color_g>
+        <color_b>144</color_b>
     </feeling>
     <feeling>
         <id>95</id>
@@ -1232,7 +1514,10 @@
         <origin_inner_en>Excited</origin_inner_en>
         <name_en>Energetic</name_en>
         <color_dec>14730239</color_dec>
-        <color_hex>#E0C3FF</color_hex>
+        <color_hex>E0C3FF</color_hex>
+        <color_r>224</color_r>
+        <color_g>195</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>96</id>
@@ -1245,7 +1530,10 @@
         <origin_inner_en>Excited</origin_inner_en>
         <name_en>Eager</name_en>
         <color_dec>14862591</color_dec>
-        <color_hex>#E2C8FF</color_hex>
+        <color_hex>E2C8FF</color_hex>
+        <color_r>226</color_r>
+        <color_g>200</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>97</id>
@@ -1258,7 +1546,10 @@
         <origin_inner_en>Amazed</origin_inner_en>
         <name_en>Awe</name_en>
         <color_dec>15060223</color_dec>
-        <color_hex>#E5CCFF</color_hex>
+        <color_hex>E5CCFF</color_hex>
+        <color_r>229</color_r>
+        <color_g>204</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>98</id>
@@ -1271,7 +1562,10 @@
         <origin_inner_en>Amazed</origin_inner_en>
         <name_en>Astonished</name_en>
         <color_dec>15258367</color_dec>
-        <color_hex>#E8D2FF</color_hex>
+        <color_hex>E8D2FF</color_hex>
+        <color_r>232</color_r>
+        <color_g>210</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>99</id>
@@ -1284,7 +1578,10 @@
         <origin_inner_en>Confused</origin_inner_en>
         <name_en>Perplexed</name_en>
         <color_dec>15390719</color_dec>
-        <color_hex>#EAD7FF</color_hex>
+        <color_hex>EAD7FF</color_hex>
+        <color_r>234</color_r>
+        <color_g>215</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>100</id>
@@ -1297,7 +1594,10 @@
         <origin_inner_en>Confused</origin_inner_en>
         <name_en>Disillusioned</name_en>
         <color_dec>15588607</color_dec>
-        <color_hex>#EDDCFF</color_hex>
+        <color_hex>EDDCFF</color_hex>
+        <color_r>237</color_r>
+        <color_g>220</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>101</id>
@@ -1310,7 +1610,10 @@
         <origin_inner_en>Startled</origin_inner_en>
         <name_en>Dismayed</name_en>
         <color_dec>15786495</color_dec>
-        <color_hex>#F0E1FF</color_hex>
+        <color_hex>F0E1FF</color_hex>
+        <color_r>240</color_r>
+        <color_g>225</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>102</id>
@@ -1323,7 +1626,10 @@
         <origin_inner_en>Startled</origin_inner_en>
         <name_en>Shocked</name_en>
         <color_dec>15918847</color_dec>
-        <color_hex>#F2E6FF</color_hex>
+        <color_hex>F2E6FF</color_hex>
+        <color_r>242</color_r>
+        <color_g>230</color_g>
+        <color_b>255</color_b>
     </feeling>
     <feeling>
         <id>103</id>
@@ -1336,7 +1642,10 @@
         <origin_inner_en>Tired</origin_inner_en>
         <name_en>Unfocussed</name_en>
         <color_dec>15138790</color_dec>
-        <color_hex>#E6FFE6</color_hex>
+        <color_hex>E6FFE6</color_hex>
+        <color_r>230</color_r>
+        <color_g>255</color_g>
+        <color_b>230</color_b>
     </feeling>
     <feeling>
         <id>104</id>
@@ -1349,7 +1658,10 @@
         <origin_inner_en>Tired</origin_inner_en>
         <name_en>Sleepy</name_en>
         <color_dec>14811105</color_dec>
-        <color_hex>#E1FFE1</color_hex>
+        <color_hex>E1FFE1</color_hex>
+        <color_r>225</color_r>
+        <color_g>255</color_g>
+        <color_b>225</color_b>
     </feeling>
     <feeling>
         <id>105</id>
@@ -1362,7 +1674,10 @@
         <origin_inner_en>Stressed</origin_inner_en>
         <name_en>Out of control</name_en>
         <color_dec>14483420</color_dec>
-        <color_hex>#DCFFDC</color_hex>
+        <color_hex>DCFFDC</color_hex>
+        <color_r>220</color_r>
+        <color_g>255</color_g>
+        <color_b>220</color_b>
     </feeling>
     <feeling>
         <id>106</id>
@@ -1375,7 +1690,10 @@
         <origin_inner_en>Stressed</origin_inner_en>
         <name_en>Overwhelmed</name_en>
         <color_dec>14155735</color_dec>
-        <color_hex>#D7FFD7</color_hex>
+        <color_hex>D7FFD7</color_hex>
+        <color_r>215</color_r>
+        <color_g>255</color_g>
+        <color_b>215</color_b>
     </feeling>
     <feeling>
         <id>107</id>
@@ -1388,7 +1706,10 @@
         <origin_inner_en>Busy</origin_inner_en>
         <name_en>Rushed</name_en>
         <color_dec>13828050</color_dec>
-        <color_hex>#D2FFD2</color_hex>
+        <color_hex>D2FFD2</color_hex>
+        <color_r>210</color_r>
+        <color_g>255</color_g>
+        <color_b>210</color_b>
     </feeling>
     <feeling>
         <id>108</id>
@@ -1401,7 +1722,10 @@
         <origin_inner_en>Busy</origin_inner_en>
         <name_en>Pressured</name_en>
         <color_dec>13500365</color_dec>
-        <color_hex>#CDFFCD</color_hex>
+        <color_hex>CDFFCD</color_hex>
+        <color_r>205</color_r>
+        <color_g>255</color_g>
+        <color_b>205</color_b>
     </feeling>
     <feeling>
         <id>109</id>
@@ -1414,7 +1738,10 @@
         <origin_inner_en>Bored</origin_inner_en>
         <name_en>Apathetic</name_en>
         <color_dec>13172680</color_dec>
-        <color_hex>#C8FFC8</color_hex>
+        <color_hex>C8FFC8</color_hex>
+        <color_r>200</color_r>
+        <color_g>255</color_g>
+        <color_b>200</color_b>
     </feeling>
     <feeling>
         <id>110</id>
@@ -1427,7 +1754,10 @@
         <origin_inner_en>Bored</origin_inner_en>
         <name_en>Indifferent</name_en>
         <color_dec>12844995</color_dec>
-        <color_hex>#C3FFC3</color_hex>
+        <color_hex>C3FFC3</color_hex>
+        <color_r>195</color_r>
+        <color_g>255</color_g>
+        <color_b>195</color_b>
     </feeling>
     <feeling>
         <id>111</id>
@@ -1440,7 +1770,10 @@
         <origin_inner_en>Scared</origin_inner_en>
         <name_en>Helpless</name_en>
         <color_dec>16766382</color_dec>
-        <color_hex>#FFD5AE</color_hex>
+        <color_hex>FFD5AE</color_hex>
+        <color_r>255</color_r>
+        <color_g>213</color_g>
+        <color_b>174</color_b>
     </feeling>
     <feeling>
         <id>112</id>
@@ -1453,7 +1786,10 @@
         <origin_inner_en>Scared</origin_inner_en>
         <name_en>Frightened</name_en>
         <color_dec>16766899</color_dec>
-        <color_hex>#FFD7B3</color_hex>
+        <color_hex>FFD7B3</color_hex>
+        <color_r>255</color_r>
+        <color_g>215</color_g>
+        <color_b>179</color_b>
     </feeling>
     <feeling>
         <id>113</id>
@@ -1466,7 +1802,10 @@
         <origin_inner_en>Anxious</origin_inner_en>
         <name_en>Overwhelmed</name_en>
         <color_dec>16767673</color_dec>
-        <color_hex>#FFDAB9</color_hex>
+        <color_hex>FFDAB9</color_hex>
+        <color_r>255</color_r>
+        <color_g>218</color_g>
+        <color_b>185</color_b>
     </feeling>
     <feeling>
         <id>114</id>
@@ -1479,7 +1818,10 @@
         <origin_inner_en>Anxious</origin_inner_en>
         <name_en>Worried</name_en>
         <color_dec>16768446</color_dec>
-        <color_hex>#FFDDBE</color_hex>
+        <color_hex>FFDDBE</color_hex>
+        <color_r>255</color_r>
+        <color_g>221</color_g>
+        <color_b>190</color_b>
     </feeling>
     <feeling>
         <id>115</id>
@@ -1492,7 +1834,10 @@
         <origin_inner_en>Insecure</origin_inner_en>
         <name_en>Inadequate</name_en>
         <color_dec>16769219</color_dec>
-        <color_hex>#FFE0C3</color_hex>
+        <color_hex>FFE0C3</color_hex>
+        <color_r>255</color_r>
+        <color_g>224</color_g>
+        <color_b>195</color_b>
     </feeling>
     <feeling>
         <id>116</id>
@@ -1505,7 +1850,10 @@
         <origin_inner_en>Insecure</origin_inner_en>
         <name_en>Inferior</name_en>
         <color_dec>16769736</color_dec>
-        <color_hex>#FFE2C8</color_hex>
+        <color_hex>FFE2C8</color_hex>
+        <color_r>255</color_r>
+        <color_g>226</color_g>
+        <color_b>200</color_b>
     </feeling>
     <feeling>
         <id>117</id>
@@ -1518,7 +1866,10 @@
         <origin_inner_en>Weak</origin_inner_en>
         <name_en>Worthless</name_en>
         <color_dec>16770509</color_dec>
-        <color_hex>#FFE5CD</color_hex>
+        <color_hex>FFE5CD</color_hex>
+        <color_r>255</color_r>
+        <color_g>229</color_g>
+        <color_b>205</color_b>
     </feeling>
     <feeling>
         <id>118</id>
@@ -1531,7 +1882,10 @@
         <origin_inner_en>Weak</origin_inner_en>
         <name_en>Insignificant</name_en>
         <color_dec>16771282</color_dec>
-        <color_hex>#FFE8D2</color_hex>
+        <color_hex>FFE8D2</color_hex>
+        <color_r>255</color_r>
+        <color_g>232</color_g>
+        <color_b>210</color_b>
     </feeling>
     <feeling>
         <id>119</id>
@@ -1544,7 +1898,10 @@
         <origin_inner_en>Rejected</origin_inner_en>
         <name_en>Excluded</name_en>
         <color_dec>16771799</color_dec>
-        <color_hex>#FFEAD7</color_hex>
+        <color_hex>FFEAD7</color_hex>
+        <color_r>255</color_r>
+        <color_g>234</color_g>
+        <color_b>215</color_b>
     </feeling>
     <feeling>
         <id>120</id>
@@ -1557,7 +1914,10 @@
         <origin_inner_en>Rejected</origin_inner_en>
         <name_en>Persecuted</name_en>
         <color_dec>16772572</color_dec>
-        <color_hex>#FFEDDC</color_hex>
+        <color_hex>FFEDDC</color_hex>
+        <color_r>255</color_r>
+        <color_g>237</color_g>
+        <color_b>220</color_b>
     </feeling>
     <feeling>
         <id>121</id>
@@ -1570,7 +1930,10 @@
         <origin_inner_en>Threatened</origin_inner_en>
         <name_en>Nervous</name_en>
         <color_dec>16773345</color_dec>
-        <color_hex>#FFF0E1</color_hex>
+        <color_hex>FFF0E1</color_hex>
+        <color_r>255</color_r>
+        <color_g>240</color_g>
+        <color_b>225</color_b>
     </feeling>
     <feeling>
         <id>122</id>
@@ -1583,7 +1946,10 @@
         <origin_inner_en>Threatened</origin_inner_en>
         <name_en>Exposed</name_en>
         <color_dec>16773862</color_dec>
-        <color_hex>#FFF2E6</color_hex>
+        <color_hex>FFF2E6</color_hex>
+        <color_r>255</color_r>
+        <color_g>242</color_g>
+        <color_b>230</color_b>
     </feeling>
     <feeling>
         <id>123</id>
@@ -1596,7 +1962,10 @@
         <origin_inner_en>Let down</origin_inner_en>
         <name_en>Betrayed</name_en>
         <color_dec>16770790</color_dec>
-        <color_hex>#FFE6E6</color_hex>
+        <color_hex>FFE6E6</color_hex>
+        <color_r>255</color_r>
+        <color_g>230</color_g>
+        <color_b>230</color_b>
     </feeling>
     <feeling>
         <id>124</id>
@@ -1609,7 +1978,10 @@
         <origin_inner_en>Let down</origin_inner_en>
         <name_en>Resentful</name_en>
         <color_dec>16769505</color_dec>
-        <color_hex>#FFE1E1</color_hex>
+        <color_hex>FFE1E1</color_hex>
+        <color_r>255</color_r>
+        <color_g>225</color_g>
+        <color_b>225</color_b>
     </feeling>
     <feeling>
         <id>125</id>
@@ -1622,7 +1994,10 @@
         <origin_inner_en>Humiliated</origin_inner_en>
         <name_en>Disrespected</name_en>
         <color_dec>16768220</color_dec>
-        <color_hex>#FFDCDC</color_hex>
+        <color_hex>FFDCDC</color_hex>
+        <color_r>255</color_r>
+        <color_g>220</color_g>
+        <color_b>220</color_b>
     </feeling>
     <feeling>
         <id>126</id>
@@ -1635,7 +2010,10 @@
         <origin_inner_en>Humiliated</origin_inner_en>
         <name_en>Ridiculed</name_en>
         <color_dec>16766935</color_dec>
-        <color_hex>#FFD7D7</color_hex>
+        <color_hex>FFD7D7</color_hex>
+        <color_r>255</color_r>
+        <color_g>215</color_g>
+        <color_b>215</color_b>
     </feeling>
     <feeling>
         <id>127</id>
@@ -1648,7 +2026,10 @@
         <origin_inner_en>Bitter</origin_inner_en>
         <name_en>Indignant</name_en>
         <color_dec>16765650</color_dec>
-        <color_hex>#FFD2D2</color_hex>
+        <color_hex>FFD2D2</color_hex>
+        <color_r>255</color_r>
+        <color_g>210</color_g>
+        <color_b>210</color_b>
     </feeling>
     <feeling>
         <id>128</id>
@@ -1661,7 +2042,10 @@
         <origin_inner_en>Bitter</origin_inner_en>
         <name_en>Violated</name_en>
         <color_dec>16764365</color_dec>
-        <color_hex>#FFCDCD</color_hex>
+        <color_hex>FFCDCD</color_hex>
+        <color_r>255</color_r>
+        <color_g>205</color_g>
+        <color_b>205</color_b>
     </feeling>
     <feeling>
         <id>129</id>
@@ -1674,7 +2058,10 @@
         <origin_inner_en>Mad</origin_inner_en>
         <name_en>Furious</name_en>
         <color_dec>16762823</color_dec>
-        <color_hex>#FFC7C7</color_hex>
+        <color_hex>FFC7C7</color_hex>
+        <color_r>255</color_r>
+        <color_g>199</color_g>
+        <color_b>199</color_b>
     </feeling>
     <feeling>
         <id>130</id>
@@ -1687,6 +2074,9 @@
         <origin_inner_en>Mad</origin_inner_en>
         <name_en>Jealous</name_en>
         <color_dec>16761538</color_dec>
-        <color_hex>#FFC2C2</color_hex>
+        <color_hex>FFC2C2</color_hex>
+        <color_r>255</color_r>
+        <color_g>194</color_g>
+        <color_b>194</color_b>
     </feeling>
 </feelings>
