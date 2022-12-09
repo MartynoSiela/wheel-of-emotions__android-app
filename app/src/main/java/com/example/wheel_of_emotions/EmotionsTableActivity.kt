@@ -72,7 +72,7 @@ class EmotionsTableActivity : AppCompatActivity() {
                 val emotionDate = data?.getString(2)
 
                 emotionIdCell.text = emotionEntryId
-                emotionNameCell.text = MainActivity.Feeling().getFeelingById(emotionId!!)?.nameEn
+                emotionNameCell.text = MainActivity.Feeling().getFeelingById(emotionId!!)?.nameLt
                 emotionDateCell.text = formatDate(emotionDate!!)
 
                 val emotionColor = MainActivity.Feeling().getFeelingById(emotionId)?.colorARGB

@@ -268,6 +268,8 @@ class MainActivity : AppCompatActivity() {
             private set
         var uniqueName: String = ""
             private set
+        var nameLt: String = ""
+            private set
         var nameEn: String = ""
             private set
         var colorARGB: Int = 0
@@ -275,7 +277,6 @@ class MainActivity : AppCompatActivity() {
         private var position: String = ""
         private var originCenterLt: String? = ""
         private var originInnerLt: String? = ""
-        private var nameLt: String = ""
         private var originCenterEn: String? = ""
         private var originInnerEn: String? = ""
         private var colorDec: Int = 0
