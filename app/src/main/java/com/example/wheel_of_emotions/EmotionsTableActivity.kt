@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -49,10 +50,20 @@ class EmotionsTableActivity : AppCompatActivity() {
         }
 
         buttonClearEmotions.setOnClickListener{
-            val db = DBHelper(this, null)
-            db.clearTable(DBHelper.TABLE_NAME)
-            db.close()
-            this.recreate()
+            val dialog = AlertDialog.Builder(this)
+                .setTitle("Confirmation")
+                .setMessage("All previously stored emotions will be cleared. Are you sure you want to do this?")
+                .setPositiveButton("Yes") { _, _ ->
+                    run {
+                        val db = DBHelper(this, null)
+                        db.clearTable(DBHelper.TABLE_NAME)
+                        db.close()
+                        this.recreate()
+                    }
+                }
+                .setNegativeButton("No") { _, _ ->}
+                .create()
+            dialog.show()
         }
     }
 
