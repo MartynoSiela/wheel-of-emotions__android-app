@@ -54,14 +54,11 @@ class EmotionsTableActivity : AppCompatActivity() {
                 .setTitle("Confirmation")
                 .setMessage("All previously stored emotions will be cleared. Are you sure you want to do this?")
                 .setPositiveButton("Yes") { _, _ ->
-                    run {
-                        val db = DBHelper(this, null)
-                        db.clearTable(DBHelper.TABLE_NAME)
-                        db.close()
-                        this.recreate()
-                    }
+                    clearTable()
                 }
-                .setNegativeButton("No") { _, _ ->}
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
                 .create()
             dialog.show()
         }
@@ -118,5 +115,12 @@ class EmotionsTableActivity : AppCompatActivity() {
         val timestamp = Timestamp(timestampString.toLong())
         val date = Date(timestamp.time)
         return dateFormat.format(date)
+    }
+
+    private fun clearTable() {
+        val db = DBHelper(this, null)
+        db.clearTable(DBHelper.TABLE_NAME)
+        db.close()
+        this.recreate()
     }
 }
