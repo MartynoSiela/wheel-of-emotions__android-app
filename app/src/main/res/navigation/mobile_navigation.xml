@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_wheel">
+
+    <fragment
+        android:id="@+id/navigation_wheel"
+        android:name="com.example.wheel_of_emotions.ui.wheel.WheelFragment"
+        android:label="Wheel"
+        tools:layout="@layout/fragment_wheel" />
+
+    <fragment
+        android:id="@+id/navigation_table"
+        android:name="com.example.wheel_of_emotions.ui.table.TableFragment"
+        android:label="Table"
+        tools:layout="@layout/fragment_table" />
+
+    <fragment
+        android:id="@+id/navigation_week"
+        android:name="com.example.wheel_of_emotions.ui.week.WeekFragment"
+        android:label="Week"
+        tools:layout="@layout/fragment_week" />
+
+</navigation>

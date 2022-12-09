@@ -13,10 +13,6 @@
         android:theme="@style/Theme.Wheelofemotions"
         tools:targetApi="31">
         <activity
-            android:name=".EmotionsTableActivity"
-            android:exported="false">
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
