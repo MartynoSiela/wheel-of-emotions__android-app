@@ -67,16 +67,16 @@ class EmotionsTableActivity : AppCompatActivity() {
                 val emotionNameCell = tableRow.findViewById<TextView>(R.id.column_emotion)
                 val emotionDateCell = tableRow.findViewById<TextView>(R.id.column_date)
 
-                val emotionId = data?.getString(0)
-                val emotionName = data?.getString(1)
+                val emotionEntryId = data?.getString(0)
+                val emotionId = data?.getString(1)?.toInt()
                 val emotionDate = data?.getString(2)
 
-                emotionIdCell.text = emotionId
-                emotionNameCell.text = emotionName
+                emotionIdCell.text = emotionEntryId
+                emotionNameCell.text = MainActivity.Feeling().getFeelingById(emotionId!!)?.nameEn
                 emotionDateCell.text = formatDate(emotionDate!!)
 
-                val emotionColor = MainActivity.Feeling().getColorARGBByFeelingName(emotionName)
-                val emotionColorStateList = ColorStateList.valueOf(emotionColor)
+                val emotionColor = MainActivity.Feeling().getFeelingById(emotionId)?.colorARGB
+                val emotionColorStateList = ColorStateList.valueOf(emotionColor!!)
 
                 ViewCompat.setBackground(emotionIdCell, cellShape)
                 ViewCompat.setBackground(emotionDateCell, cellShape)

@@ -12,7 +12,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     override fun onCreate(db: SQLiteDatabase) {
         val query = ("CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY, " +
-                EMOTION_COl + " TEXT," +
+                EMOTION_ID_COL + " INTEGER," +
                 DATE_COL + " LONG" + ")")
 
         db.execSQL(query)
@@ -30,10 +30,10 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         // db.execSQL("UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = '$TABLE_NAME'");
     }
 
-    fun addEmotion(emotion : String, date : Long ){
+    fun addEmotion(emotion_id : Int, date : Long ){
 
         val values = ContentValues()
-        values.put(EMOTION_COl, emotion)
+        values.put(EMOTION_ID_COL, emotion_id)
         values.put(DATE_COL, date)
 
         val db = this.writableDatabase
@@ -52,7 +52,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         private const val DATABASE_VERSION = 1
         const val TABLE_NAME = "table_emotions"
         private const val ID_COL = "id"
-        private const val EMOTION_COl = "emotion"
+        private const val EMOTION_ID_COL = "emotion"
         private const val DATE_COL = "date"
     }
 }

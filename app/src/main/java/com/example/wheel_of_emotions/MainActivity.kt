@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     // Variables used for changing section color
     private var colorValuePreviousNegativeInt = -1
     private var colorValuePreviousRgbInt = -1
-    private var colorNamePrevious = "null"
+    private var feelingIdPrevious = 0
 
     // Variables used for rotation of the wheel and clicking on sections
     private val swipeThreshold = 2f
@@ -78,14 +78,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun getPixelColorName(pixel: Int) {
         // Get color name and value of the currently selected section or the one that is being clicked
-        val (colorName, colorValue) = if (pixel == colorSelectedInt) {
-            Pair(Feeling().getFeelingNameByColor(colorValuePreviousRgbInt), colorValuePreviousRgbInt)
+        val (feelingId, colorValue) = if (pixel == colorSelectedInt) {
+
+            Pair(Feeling().getFeelingByColor(colorValuePreviousRgbInt).id, colorValuePreviousRgbInt)
         } else {
-            Pair(Feeling().getFeelingNameByColor(pixel), pixel)
+            Pair(Feeling().getFeelingByColor(pixel).id, pixel)
         }
 
         // Change color of currently clicked section and restore previously selected one
-        changeSectionColor(imageViewWheel, colorName, colorValue)
+        changeSectionColor(imageViewWheel, feelingId, colorValue)
 
         // Enable or disable button to add an emotion based on clicked section status
         if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
@@ -95,24 +96,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun changeSectionColor(imageView: ImageView, colorNameCurrent: String, colorValueCurrent: Int) {
+    private fun changeSectionColor(imageView: ImageView, feelingIdCurrent: Int, colorValueCurrent: Int) {
         val vector = VectorChildFinder(this, R.drawable.wheel, imageView)
-        val sectionCurrent = vector.findPathByName(colorNameCurrent)
+        val sectionCurrent = vector.findPathByName(Feeling().getFeelingById(feelingIdCurrent)?.uniqueName)
 
         // No section is selected and a section is clicked
         if (colorValuePreviousNegativeInt == -1) {
             colorValuePreviousNegativeInt = sectionCurrent.fillColor
             colorValuePreviousRgbInt = colorValueCurrent
-            colorNamePrevious = colorNameCurrent
+            feelingIdPrevious = feelingIdCurrent
             sectionCurrent.fillColor = colorSelectedRgb
         }
         // A section is selected but a different section is clicked
-        else if (colorNamePrevious != colorNameCurrent) {
-            val sectionPrevious = vector.findPathByName(colorNamePrevious)
+        else if (feelingIdPrevious != feelingIdCurrent) {
+            val sectionPrevious = vector.findPathByName(Feeling().getFeelingById(feelingIdCurrent)?.uniqueName)
             sectionPrevious.fillColor = colorValuePreviousNegativeInt
             colorValuePreviousNegativeInt = sectionCurrent.fillColor
             colorValuePreviousRgbInt = colorValueCurrent
-            colorNamePrevious = colorNameCurrent
+            feelingIdPrevious = feelingIdCurrent
             sectionCurrent.fillColor = colorSelectedRgb
         }
         // A section is selected and the same section is clicked
@@ -120,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             sectionCurrent.fillColor = colorValuePreviousNegativeInt
             colorValuePreviousNegativeInt = -1
             colorValuePreviousRgbInt = -1
-            colorNamePrevious = "null"
+            feelingIdPrevious = 0
         }
     }
 
@@ -245,12 +246,12 @@ class MainActivity : AppCompatActivity() {
         override fun onClick(view: View) {
             // Add selected emotion to database and show confirmation
             val db = DBHelper(this@MainActivity, null)
-            val emotion = colorNamePrevious
-            db.addEmotion(emotion, System.currentTimeMillis())
+            val feelingId = feelingIdPrevious
+            db.addEmotion(feelingId, System.currentTimeMillis())
             Toast.makeText(this@MainActivity, "Emotion added", Toast.LENGTH_SHORT).show()
 
             // Revert section color for it to become unselected and disable button
-            changeSectionColor(imageViewWheel, colorNamePrevious, colorValuePreviousRgbInt)
+            changeSectionColor(imageViewWheel, feelingIdPrevious, colorValuePreviousRgbInt)
             buttonAddEmotions.isEnabled = false
         }
     }
@@ -263,24 +264,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     class Feeling {
-        private var id: Int = 0
-        private var uniqueName: String = ""
+        var id: Int = 0
+            private set
+        var uniqueName: String = ""
+            private set
+        var nameEn: String = ""
+            private set
+        var colorARGB: Int = 0
+            private set
         private var position: String = ""
         private var originCenterLt: String? = ""
         private var originInnerLt: String? = ""
         private var nameLt: String = ""
         private var originCenterEn: String? = ""
         private var originInnerEn: String? = ""
-        private var nameEn: String = ""
         private var colorDec: Int = 0
         private var colorHex: String = ""
         private var colorR: Int = 0
         private var colorG: Int = 0
         private var colorB: Int = 0
-        private var colorARGB: Int = 0
 
         companion object {
-            val feelings = mutableListOf<Feeling>()
+            private val feelingsMap = mutableMapOf<Int, Feeling>()
         }
 
         private fun getContent(node: Element, tagName: String) : String {
@@ -292,12 +297,12 @@ class MainActivity : AppCompatActivity() {
             return if (content == "x") null else content
         }
 
-        fun getColorARGBByFeelingName(name: String?): Int {
-            return feelings.first() { it.uniqueName == name }.colorARGB
+        fun getFeelingById(id: Int) : Feeling? {
+            return feelingsMap[id]
         }
 
-        fun getFeelingNameByColor(color: Int): String {
-            return feelings.first() { it.colorDec == color }.uniqueName
+        fun getFeelingByColor(color: Int) : Feeling {
+            return feelingsMap.values.first { feeling -> feeling.colorDec == color }
         }
 
         fun parseFeelingXml(context: Context) {
@@ -325,7 +330,7 @@ class MainActivity : AppCompatActivity() {
                 feeling.colorG = getContent(node, "color_g").toInt()
                 feeling.colorB = getContent(node, "color_b").toInt()
                 feeling.colorARGB = Color.argb(255, feeling.colorR, feeling.colorG, feeling.colorB)
-                feelings.add(feeling)
+                feelingsMap[feeling.id] = feeling
             }
         }
     }
