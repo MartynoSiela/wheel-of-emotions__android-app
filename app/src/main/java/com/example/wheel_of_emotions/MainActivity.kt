@@ -7,6 +7,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.SoundEffectConstants
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -77,16 +78,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getPixelColorName(pixel: Int) {
-        // Get color name and value of the currently selected section or the one that is being clicked
+        // Get feeling id and color value of the currently selected section or the one that is being clicked
         val (feelingId, colorValue) = if (pixel == colorSelectedInt) {
-
-            Pair(Feeling().getFeelingByColor(colorValuePreviousRgbInt).id, colorValuePreviousRgbInt)
+            Pair(Feeling().getFeelingByColor(colorValuePreviousRgbInt)?.id, colorValuePreviousRgbInt)
         } else {
-            Pair(Feeling().getFeelingByColor(pixel).id, pixel)
+            Pair(Feeling().getFeelingByColor(pixel)?.id, pixel)
         }
-
         // Change color of currently clicked section and restore previously selected one
-        changeSectionColor(imageViewWheel, feelingId, colorValue)
+        feelingId?.let { changeSectionColor(imageViewWheel, it, colorValue) }
 
         // Enable or disable button to add an emotion based on clicked section status
         if (buttonAddEmotions.isEnabled && colorValuePreviousNegativeInt == -1) {
@@ -228,6 +227,7 @@ class MainActivity : AppCompatActivity() {
                         val colorPixel = bitmap.getPixel(initialX.toInt(), initialY.toInt())
                         val colorSectionSelectedHex = String.format("#%02x%02x%02x", Color.red(colorPixel), Color.green(colorPixel), Color.blue(colorPixel))
                         getPixelColorName(Integer.decode(colorSectionSelectedHex))
+                        view.playSoundEffect(SoundEffectConstants.CLICK)
                     }
 
                     // Disabled animated rotation on finished swipe
@@ -301,8 +301,8 @@ class MainActivity : AppCompatActivity() {
             return feelingsMap[id]
         }
 
-        fun getFeelingByColor(color: Int) : Feeling {
-            return feelingsMap.values.first { feeling -> feeling.colorDec == color }
+        fun getFeelingByColor(color: Int) : Feeling? {
+            return feelingsMap.values.firstOrNull() { feeling -> feeling.colorDec == color }
         }
 
         fun parseFeelingXml(context: Context) {
