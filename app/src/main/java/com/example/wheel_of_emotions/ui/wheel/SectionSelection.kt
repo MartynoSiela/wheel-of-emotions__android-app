@@ -31,7 +31,7 @@ open class SectionSelection {
         }
         // A section is selected but a different section is clicked
         else if (feelingIdPrevious != feelingIdCurrent) {
-            val sectionPrevious = vector.findPathByName(Feeling().getFeelingById(feelingIdCurrent)?.uniqueName)
+            val sectionPrevious = vector.findPathByName(Feeling().getFeelingById(feelingIdPrevious)?.uniqueName)
             sectionPrevious.fillColor = colorValuePreviousNegativeInt
             colorValuePreviousNegativeInt = sectionCurrent.fillColor
             colorValuePreviousRgbInt = colorValueCurrent
