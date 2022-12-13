@@ -16,12 +16,13 @@ class Feeling {
         private set
     var colorARGB: Int = 0
         private set
+    var colorDec: Int = 0
+        private set
     private var position: String = ""
     private var originCenterLt: String? = ""
     private var originInnerLt: String? = ""
     private var originCenterEn: String? = ""
     private var originInnerEn: String? = ""
-    private var colorDec: Int = 0
     private var colorHex: String = ""
     private var colorR: Int = 0
     private var colorG: Int = 0
