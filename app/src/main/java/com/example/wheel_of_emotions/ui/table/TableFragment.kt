@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.wheel_of_emotions.Feeling
 import com.example.wheel_of_emotions.R
 import com.example.wheel_of_emotions.databinding.FragmentTableBinding
-import java.util.ArrayList
 
 class TableFragment : Fragment() {
     private var _binding: FragmentTableBinding? = null
@@ -28,19 +27,36 @@ class TableFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _viewModel = ViewModelProvider(this)[TableViewModel::class.java]
+        _viewModel = ViewModelProvider(requireActivity())[TableViewModel::class.java]
         _binding = FragmentTableBinding.inflate(inflater, container, false)
-        _table = binding.tableLayout
-        _viewModel.initiateCellShape(requireContext())
-        val emotions = _viewModel.getEmotions(requireContext())
-        writeTableRows(emotions)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        _table = binding.tableLayout
+
+        val emotions = _viewModel.getEmotions(requireContext())
+        _viewModel.initiateCellShape(requireContext())
+        writeTableRows(emotions)
+
+        _viewModel.tableCleared.observe(viewLifecycleOwner) {
+            if (_viewModel.tableCleared.value == true) {
+                redrawTable()
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun redrawTable() {
+        this.activity?.recreate()
+        _viewModel.tableCleared.value = false
     }
 
     private fun writeTableRows(emotions: MutableList<ArrayList<String?>>) {

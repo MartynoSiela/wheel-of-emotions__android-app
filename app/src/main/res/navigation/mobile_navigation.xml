@@ -19,9 +19,9 @@
         tools:layout="@layout/fragment_table" />
 
     <fragment
-        android:id="@+id/navigation_week"
-        android:name="com.example.wheel_of_emotions.ui.week.WeekFragment"
+        android:id="@+id/navigation_table_with_clear"
+        android:name="com.example.wheel_of_emotions.ui.table.TableWithClearFragment"
         android:label="Week"
-        tools:layout="@layout/fragment_week" />
+        tools:layout="@layout/fragment_table_with_clear" />
 
 </navigation>

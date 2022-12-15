@@ -10,7 +10,7 @@
         android:title="Table"
         android:icon="@drawable/ic_launcher_foreground" />
     <item
-        android:id="@+id/navigation_week"
-        android:title="Week View"
+        android:id="@+id/navigation_table_with_clear"
+        android:title="Table With Clear"
         android:icon="@drawable/ic_launcher_foreground" />
 </menu>

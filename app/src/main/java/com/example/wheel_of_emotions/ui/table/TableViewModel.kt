@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.drawable.GradientDrawable
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.wheel_of_emotions.DBHelper
 import com.example.wheel_of_emotions.R
@@ -19,8 +20,12 @@ class TableViewModel : ViewModel() {
     private val _cellBorderWidth = 2
     private val _cellCornerRadius = 5f
     private var _cellBorderColor = 0
+    private var _tableCleared = MutableLiveData<Boolean>()
     private lateinit var _cellDefaultBackgroundColor : ColorStateList
 
+    var tableCleared: MutableLiveData<Boolean>
+        set(value) { _tableCleared = value}
+        get() = _tableCleared
     val cellShape: GradientDrawable
         get() = _cellShape
 
@@ -39,8 +44,10 @@ class TableViewModel : ViewModel() {
                 emotionsList.add(array)
             } while (emotions?.moveToNext() == true)
         }
+
         emotions?.close()
         db.close()
+
         return emotionsList
     }
 
@@ -64,5 +71,11 @@ class TableViewModel : ViewModel() {
         val timestamp = Timestamp(timestampString.toLong())
         val date = Date(timestamp.time)
         return dateFormat.format(date)
+    }
+
+    fun clearTable(context: Context) {
+        val db = DBHelper(context, null)
+        db.clearTable(DBHelper.TABLE_NAME)
+        db.close()
     }
 }
