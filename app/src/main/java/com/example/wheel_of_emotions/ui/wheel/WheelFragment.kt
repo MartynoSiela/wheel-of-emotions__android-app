@@ -110,9 +110,12 @@ class WheelFragment : Fragment() {
             } else {
                 Feeling().getFeelingByColor(colorInt)?.id
             }
-            changeWheelSectionColor(emotionId!!)
-            toggleButtonStatus()
-            view.playSoundEffect(SoundEffectConstants.CLICK)
+
+            if (emotionId != null) {
+                changeWheelSectionColor(emotionId)
+                toggleButtonStatus()
+                view.playSoundEffect(SoundEffectConstants.CLICK)
+            }
         }
     }
 
