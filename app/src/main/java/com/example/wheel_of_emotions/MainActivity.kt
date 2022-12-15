@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
 
+        Feeling().parseFeelingXml(this)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        Feeling().parseFeelingXml(this)
 
         val navView: BottomNavigationView = binding.navView
 
