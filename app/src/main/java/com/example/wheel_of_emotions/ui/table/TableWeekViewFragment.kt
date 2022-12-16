@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.wheel_of_emotions.databinding.FragmentTableWithClearBinding
+import com.example.wheel_of_emotions.databinding.FragmentWeekViewBinding
 
-class TableWithClearFragment : Fragment() {
-    private var _binding: FragmentTableWithClearBinding? = null
+class TableWeekViewFragment : Fragment() {
+    private var _binding: FragmentWeekViewBinding? = null
     private lateinit var _viewModel: TableViewModel
 
     private val binding get() = _binding!!
@@ -21,14 +21,14 @@ class TableWithClearFragment : Fragment() {
     ): View {
 
         _viewModel = ViewModelProvider(requireActivity())[TableViewModel::class.java]
-        _binding = FragmentTableWithClearBinding.inflate(inflater, container, false)
+        _binding = FragmentWeekViewBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _viewModel.filter.value = "none"
+        _viewModel.filter.value = "week"
         _viewModel.tableUpdated.value = true
     }
 

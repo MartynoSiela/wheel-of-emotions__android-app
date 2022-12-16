@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.table.TableWeekViewFragment"
+    android:orientation="vertical" >
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:id="@+id/fragment_week_view_buttons"
+        android:name="com.example.wheel_of_emotions.ui.table.ButtonsWeekViewFragment" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:id="@+id/fragment_table"
+        android:name="com.example.wheel_of_emotions.ui.table.TableFragment" />
+
+</LinearLayout>

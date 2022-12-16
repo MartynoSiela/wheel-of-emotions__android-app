@@ -39,7 +39,7 @@ class ButtonClearTableFragment : Fragment() {
                 .setMessage("All previously stored emotions will be cleared. Are you sure you want to do this?")
                 .setPositiveButton("Yes") { _, _ ->
                     _viewModel.clearTable(requireContext())
-                    _viewModel.tableCleared.value = true
+                    _viewModel.tableUpdated.value = true
                 }
                 .setNegativeButton("No") { dialog, _ ->
                     dialog.dismiss()

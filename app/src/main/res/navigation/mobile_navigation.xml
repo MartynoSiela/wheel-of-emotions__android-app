@@ -23,5 +23,10 @@
         android:name="com.example.wheel_of_emotions.ui.table.TableWithClearFragment"
         android:label="Week"
         tools:layout="@layout/fragment_table_with_clear" />
+    <fragment
+        android:id="@+id/navigation_week_view"
+        android:name="com.example.wheel_of_emotions.ui.table.TableWeekViewFragment"
+        android:label="Week"
+        tools:layout="@layout/fragment_week_view" />
 
 </navigation>

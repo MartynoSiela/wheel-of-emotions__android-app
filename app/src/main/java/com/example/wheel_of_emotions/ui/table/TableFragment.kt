@@ -2,6 +2,8 @@ package com.example.wheel_of_emotions.ui.table
 
 import android.content.res.ColorStateList
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,9 +44,10 @@ class TableFragment : Fragment() {
         _viewModel.initiateCellShape(requireContext())
         writeTableRows(emotions)
 
-        _viewModel.tableCleared.observe(viewLifecycleOwner) {
-            if (_viewModel.tableCleared.value == true) {
-                redrawTable()
+        _viewModel.tableUpdated.observe(viewLifecycleOwner) {
+            if (_viewModel.tableUpdated.value == true) {
+                val uiHandler = Handler(Looper.getMainLooper())
+                uiHandler.post { redrawTable() }
             }
         }
     }
@@ -55,8 +58,10 @@ class TableFragment : Fragment() {
     }
 
     private fun redrawTable() {
-        this.activity?.recreate()
-        _viewModel.tableCleared.value = false
+        val manager = parentFragmentManager
+        manager.beginTransaction().detach(this).commitNowAllowingStateLoss()
+        manager.beginTransaction().attach(this).commitAllowingStateLoss()
+        _viewModel.tableUpdated.value = false
     }
 
     private fun writeTableRows(emotions: MutableList<ArrayList<String?>>) {

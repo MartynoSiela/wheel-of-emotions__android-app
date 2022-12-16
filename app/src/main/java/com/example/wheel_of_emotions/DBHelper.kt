@@ -47,6 +47,11 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return db.rawQuery("SELECT * FROM $TABLE_NAME", null)
     }
 
+    fun getEmotionsByWeek(weekStartTimestamp: Long?, weekEndTimestamp: Long?) : Cursor? {
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $DATE_COL >= $weekStartTimestamp AND $DATE_COL <= $weekEndTimestamp", null)
+    }
+
     companion object{
         private const val DATABASE_NAME = "database_emotions_wheel"
         private const val DATABASE_VERSION = 1

@@ -10,6 +10,12 @@ import com.example.wheel_of_emotions.DBHelper
 import com.example.wheel_of_emotions.R
 import java.sql.Timestamp
 import java.text.SimpleDateFormat
+import java.time.DayOfWeek
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.TextStyle
+import java.time.temporal.TemporalAdjusters
 import java.util.*
 
 class TableViewModel : ViewModel() {
@@ -20,19 +26,44 @@ class TableViewModel : ViewModel() {
     private val _cellBorderWidth = 2
     private val _cellCornerRadius = 5f
     private var _cellBorderColor = 0
-    private var _tableCleared = MutableLiveData<Boolean>()
+    private var _tableUpdated = MutableLiveData<Boolean>()
     private lateinit var _cellDefaultBackgroundColor : ColorStateList
 
-    var tableCleared: MutableLiveData<Boolean>
-        set(value) { _tableCleared = value}
-        get() = _tableCleared
+    private var _weekStartTimestamp: Long? = null
+    private var _weekEndTimestamp: Long? = null
+    private var _weekStartString: String? = null
+    private var _weekEndString: String? = null
+    private var _dateToFilterBy: LocalDateTime = LocalDateTime.now()
+    private var _filter = MutableLiveData<String>()
+
+    var tableUpdated: MutableLiveData<Boolean>
+        set(value) { _tableUpdated = value}
+        get() = _tableUpdated
+    var filter: MutableLiveData<String>
+        set(value) { _filter = value}
+        get() = _filter
     val cellShape: GradientDrawable
         get() = _cellShape
+    var dateToFilterBy: LocalDateTime
+        set(value) { _dateToFilterBy = value}
+        get() = _dateToFilterBy
+    val weekStartString: String?
+        get() = _weekStartString
+    val weekEndString: String?
+        get() = _weekEndString
+
+    init {
+        setDateValues(_dateToFilterBy)
+    }
 
     fun getEmotions(context: Context) : MutableList<ArrayList<String?>> {
         val emotionsList: MutableList<ArrayList<String?>> = mutableListOf()
         val db = DBHelper(context, null)
-        val emotions = db.getEmotions()
+        val emotions = when(_filter.value) {
+            "week" -> db.getEmotionsByWeek(_weekStartTimestamp, _weekEndTimestamp)
+            "none" -> db.getEmotions()
+            else -> db.getEmotions()
+        }
 
         if (emotions?.count != 0) {
             emotions?.moveToFirst()
@@ -77,5 +108,56 @@ class TableViewModel : ViewModel() {
         val db = DBHelper(context, null)
         db.clearTable(DBHelper.TABLE_NAME)
         db.close()
+    }
+
+    fun setDateValues(date: LocalDateTime) {
+        setWeekStartTimestamp(date)
+        setWeekEndTimestamp(date)
+        setWeekStartString(date)
+        setWeekEndString(date)
+    }
+
+    private fun getWeekMonday(date: LocalDateTime) : ZonedDateTime {
+        return date.atZone(ZoneId.systemDefault()).with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
+    }
+
+    private fun getWeekSunday(date: LocalDateTime) : ZonedDateTime {
+        return date.atZone(ZoneId.systemDefault()).with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY))
+    }
+
+    private fun setWeekStartTimestamp(date: LocalDateTime) {
+        val monday = getWeekMonday(date)
+        val mondayStart = LocalDateTime.of(monday.year, monday.month, monday.dayOfMonth, 0, 0, 1)
+        _weekStartTimestamp = mondayStart.atZone(ZoneId.systemDefault()).toEpochSecond() * 1000
+    }
+
+    private fun setWeekEndTimestamp(date: LocalDateTime) {
+        val sunday = getWeekSunday(date)
+        val sundayEnd = LocalDateTime.of(sunday.year, sunday.month, sunday.dayOfMonth, 23, 59, 59)
+        _weekEndTimestamp = sundayEnd.atZone(ZoneId.systemDefault()).toEpochSecond() * 1000
+    }
+
+    private fun setWeekStartString(date: LocalDateTime) {
+        val monday = getWeekMonday(date)
+        val day = monday.dayOfMonth
+        val month = monday.month.getDisplayName(TextStyle.SHORT, Locale.ENGLISH)
+        _weekStartString = "$month $day"
+    }
+
+    private fun setWeekEndString(date: LocalDateTime) {
+        val sunday = getWeekSunday(date)
+        val day = sunday.dayOfMonth
+        val month = sunday.month.getDisplayName(TextStyle.SHORT, Locale.ENGLISH)
+        _weekEndString = "$month $day"
+    }
+
+    fun getNextWeekDay(date: LocalDateTime) : LocalDateTime {
+        val dayOfWeek = date.dayOfWeek
+        return date.with(TemporalAdjusters.next(dayOfWeek))
+    }
+
+    fun getPreviousWeekDay(date: LocalDateTime) : LocalDateTime {
+        val dayOfWeek = date.dayOfWeek
+        return date.with(TemporalAdjusters.previous(dayOfWeek))
     }
 }
